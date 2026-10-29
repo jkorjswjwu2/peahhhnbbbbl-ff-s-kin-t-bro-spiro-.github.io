@@ -3,898 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WELCOME TO SPIRØ X</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-    <style<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WELCOME TO SPYRØ XX</title>
+    <title>WELLCOM TO SPIRO X</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Tajawal', sans-serif;
-        }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Tajawal', sans-serif; }
         body {
-            background-color: #050508;
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px 10px;
-            overflow-x: hidden;
+            background-color: #050508; color: #fff; min-height: 100vh;
+            display: flex; flex-direction: column; align-items: center;
+            padding: 20px 10px; overflow-x: hidden;
         }
-
-        /* Top Admin Bar */
         .admin-badge {
-            background: rgba(0, 210, 255, 0.1);
-            border: 1px solid #00d2ff;
-            color: #00d2ff;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin-bottom: 25px;
-            box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
+            background: rgba(0,210,255,0.1); border: 1px solid #00d2ff; color: #00d2ff;
+            padding: 6px 16px; border-radius: 20px; font-size: .85rem; margin-bottom: 25px;
+            box-shadow: 0 0 10px rgba(0,210,255,.2);
         }
-
-        /* Title Styling */
-        .title-container {
-            text-align: center;
-            margin-bottom: 15px;
-        }
-
+        .title-container { text-align: center; margin-bottom: 15px; }
         .main-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: #00d2ff;
-            text-shadow: 0 0 20px rgba(0, 210, 255, 0.6);
-            letter-spacing: 2px;
+            font-family: 'Orbitron', sans-serif; font-size: 2.2rem; font-weight: 900;
+            color: #00d2ff; text-shadow: 0 0 20px rgba(0,210,255,.6); letter-spacing: 2px;
         }
-
         .main-title .xx-text {
-            color: #ff007f;
-            margin-right: 15px;
-            text-shadow: 0 0 20px rgba(255, 0, 127, 0.6);
+            color: #ff007f; margin-right: 15px; text-shadow: 0 0 20px rgba(255,0,127,.6);
         }
-
-        .sub-text {
-            color: #a0a5b5;
-            font-size: 0.95rem;
-            margin-top: 8px;
-            text-align: center;
-        }
-
-        /* Curved Pill Card Container */
+        .sub-text { color: #a0a5b5; font-size: .95rem; margin-top: 8px; text-align: center; }
         .pill-card {
-            background: rgba(15, 18, 28, 0.85);
-            border: 2px solid rgba(0, 210, 255, 0.3);
-            border-radius: 40px; /* الجوانب قوسية كبسولية */
-            width: 100%;
-            max-width: 480px;
-            padding: 30px 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 210, 255, 0.15);
-            backdrop-filter: blur(10px);
-            margin-top: 20px;
+            background: rgba(15,18,28,.85); border: 2px solid rgba(0,210,255,.3);
+            border-radius: 40px; width: 100%; max-width: 480px;
+            padding: 30px 20px; box-shadow: 0 10px 30px rgba(0,0,0,.8), 0 0 25px rgba(0,210,255,.15);
+            backdrop-filter: blur(10px); margin-top: 20px;
         }
-
-        .section-label {
-            font-size: 1.1rem;
-            color: #00d2ff;
-            margin-bottom: 12px;
-            display: block;
-            font-weight: bold;
-        }
-
-        /* Device Search Section */
-        .search-box {
-            position: relative;
-            margin-bottom: 15px;
-        }
-
+        .section-label { font-size: 1.1rem; color: #00d2ff; margin-bottom: 12px; display: block; font-weight: bold; }
+        .search-box { position: relative; margin-bottom: 15px; }
         .search-box input {
-            width: 100%;
-            padding: 12px 15px;
-            background: #0a0d14;
-            border: 1px solid #1a233a;
-            border-radius: 15px;
-            color: #fff;
-            font-size: 0.95rem;
-            outline: none;
-            transition: 0.3s;
+            width: 100%; padding: 12px 15px; background: #0a0d14;
+            border: 1px solid #1a233a; border-radius: 15px; color: #fff;
+            font-size: .95rem; outline: none; transition: .3s;
         }
-
-        .search-box input:focus {
-            border-color: #00d2ff;
-            box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
-        }
-
+        .search-box input:focus { border-color: #00d2ff; box-shadow: 0 0 10px rgba(0,210,255,.3); }
         .device-select {
-            width: 100%;
-            padding: 12px 15px;
-            background: #0a0d14;
-            border: 1px solid #1a233a;
-            border-radius: 15px;
-            color: #fff;
-            font-size: 0.95rem;
-            outline: none;
-            max-height: 150px;
-            cursor: pointer;
+            width: 100%; padding: 12px 15px; background: #0a0d14;
+            border: 1px solid #1a233a; border-radius: 15px; color: #fff;
+            font-size: .95rem; outline: none; cursor: pointer;
         }
-
-        /* Custom Action Button */
+        .device-select option { background: #0a0d14; color: #fff; padding: 8px; }
+        .device-count { font-size: .8rem; color: #a0a5b5; margin-top: 6px; text-align: center; }
         .btn-enter {
-            width: 100%;
-            padding: 14px;
-            background: linear-gradient(90deg, #00d2ff, #ff007f);
-            border: none;
-            border-radius: 25px;
-            color: #ffffff;
-            font-weight: bold;
-            font-size: 1.1rem;
-            cursor: pointer;
-            margin-top: 20px;
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
-            transition: 0.3s transform;
+            width: 100%; padding: 14px; background: linear-gradient(90deg,#00d2ff,#ff007f);
+            border: none; border-radius: 25px; color: #fff; font-weight: bold;
+            font-size: 1.1rem; cursor: pointer; margin-top: 20px;
+            box-shadow: 0 0 15px rgba(0,210,255,.4); transition: .3s transform;
         }
-
-        .btn-enter:active {
-            transform: scale(0.98);
-        }
-
-        /* Results Box (Sensitivities 1 to 200 & DPI) */
+        .btn-enter:active { transform: scale(.98); }
         .results-box {
-            display: none;
-            margin-top: 25px;
-            background: rgba(5, 7, 12, 0.9);
-            border-radius: 25px;
-            padding: 20px;
-            border: 1px solid #ff007f;
+            display: none; margin-top: 25px; background: rgba(5,7,12,.9);
+            border-radius: 25px; padding: 20px; border: 1px solid #ff007f;
         }
-
         .sens-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.05);
         }
-
-        .sens-item:last-child {
-            border-bottom: none;
-        }
-
-        .sens-name {
-            color: #a0a5b5;
-            font-size: 0.95rem;
-        }
-
-        .sens-value {
-            color: #00d2ff;
-            font-weight: bold;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.1rem;
-        }
-
-        .dpi-value {
-            color: #ff007f;
-            font-weight: bold;
-            font-family: 'Orbitron', sans-serif;
-        }
+        .sens-item:last-child { border-bottom: none; }
+        .sens-name { color: #a0a5b5; font-size: .95rem; }
+        .sens-value { color: #00d2ff; font-weight: bold; font-family: 'Orbitron', sans-serif; font-size: 1.1rem; }
+        .dpi-value { color: #ff007f; font-weight: bold; font-family: 'Orbitron', sans-serif; }
     </style>
 </head>
 <body>
 
-    <!-- Admin Identifier -->
-    <div class="admin-badge">
-        ADMIN: cj.1wq21wq2@gmail.com
-    </div>
+    <div class="admin-badge">ADMIN: cj.1wq21wq2@gmail.com</div>
 
-    <!-- Header Title -->
     <div class="title-container">
-        <h1 class="main-title">WELCOME TO SPYRØ <span class="xx-text">XX</span></h1>
+        <h1 class="main-title">WELLCOM TO SPIRO <span class="xx-text">X</span></h1>
         <p class="sub-text">أقوى مولد حساسية وهيدشوت بدقة 4K لجميع الهواتف</p>
     </div>
 
-    <!-- Curved Pill Box -->
     <div class="pill-card">
-        <label class="section-label">ENTER YOUR PHONE / ابحث عن هاتفك:</label>
-        
-        <!-- Search Input -->
+        <label class="section-label">ابحث عن هاتفك:</label>
+
         <div class="search-box">
-            <input type="text" id="searchInput" onkeyup="filterDevices()" placeholder="ابحث باسم هاتفك هنا...">
+            <input type="text" id="searchInput" onkeyup="filterDevices()" placeholder="اكتب اسم هاتفك هنا...">
         </div>
 
-        <!-- Devices List -->
-        <select id="deviceSelect" class="device-select" size="5">
-            <option value="samsung_a04s">Samsung Galaxy A04s</option>
-            <option value="samsung_a12">Samsung Galaxy A12</option>
-            <option value="samsung_a54">Samsung Galaxy A54</option>
-            <option value="iphone_11">iPhone 11 / 11 Pro</option>
-            <option value="iphone_13">iPhone 13 / 14</option>
-            <option value="poco_x3">Poco X3 Pro / NFC</option>
-            <option value="poco_f5">Poco F5 / F6</option>
-            <option value="redmi_note_11">Xiaomi Redmi Note 11</option>
-            <option value="infinix_hot12">Infinix Hot 12 / Note 12</option>
-            <option value="tecno_pova">Tecno Pova 4 / Neo</option>
-            <option value="realme_c35">Realme C35 / C55</option>
+        <select id="deviceSelect" class="device-select">
+            <option value="">-- اختر هاتفك --</option>
         </select>
+        <p class="device-count" id="deviceCount"></p>
 
         <button class="btn-enter" onclick="generateSensitivity()">ENTER / استخراج الحساسية</button>
 
-        <!-- Sensitivities Display (Values 1 - 200) -->
         <div id="results" class="results-box">
-            <div class="sens-item">
-                <span class="sens-name">عام (General):</span>
-                <span class="sens-value" id="sensGen">188</span>
-            </div>
-            <div class="sens-item">
-                <span class="sens-name">نقطة حمراء (Red Dot):</span>
-                <span class="sens-value" id="sensRed">195</span>
-            </div>
-            <div class="sens-item">
-                <span class="sens-name">عدسة 2X:</span>
-                <span class="sens-value" id="sens2x">175</span>
-            </div>
-            <div class="sens-item">
-                <span class="sens-name">عدسة 4X:</span>
-                <span class="sens-value" id="sens4x">182</span>
-            </div>
-            <div class="sens-item">
-                <span class="sens-name">عدسة القناصة (Sniper):</span>
-                <span class="sens-value" id="sensSniper">120</span>
-            </div>
-            <div class="sens-item">
-                <span class="sens-name">نظرة حرة (Free Look):</span>
-                <span class="sens-value" id="sensFree">150</span>
-            </div>
-            <div class="sens-item">
-                <span class="sens-name">زر الضرب (Fire Button):</span>
-                <span class="sens-value" id="sensBtn">48%</span>
-            </div>
-            <div class="sens-item">
-                <span class="sens-name">معدل الـ DPI المقترح:</span>
-                <span class="dpi-value" id="sensDpi">600 DPI</span>
-            </div>
+            <div class="sens-item"><span class="sens-name">عام (General):</span><span class="sens-value" id="sensGen">188</span></div>
+            <div class="sens-item"><span class="sens-name">نقطة حمراء (Red Dot):</span><span class="sens-value" id="sensRed">195</span></div>
+            <div class="sens-item"><span class="sens-name">عدسة 2X:</span><span class="sens-value" id="sens2x">175</span></div>
+            <div class="sens-item"><span class="sens-name">عدسة 4X:</span><span class="sens-value" id="sens4x">182</span></div>
+            <div class="sens-item"><span class="sens-name">عدسة القناصة (Sniper):</span><span class="sens-value" id="sensSniper">120</span></div>
+            <div class="sens-item"><span class="sens-name">نظرة حرة (Free Look):</span><span class="sens-value" id="sensFree">150</span></div>
+            <div class="sens-item"><span class="sens-name">زر الضرب (Fire Button):</span><span class="sens-value" id="sensBtn">48%</span></div>
+            <div class="sens-item"><span class="sens-name">معدل الـ DPI المقترح:</span><span class="dpi-value" id="sensDpi">600 DPI</span></div>
         </div>
     </div>
 
     <script>
-        // البحث الفوري في قائمة الهواتف
+        // ============ قاعدة بيانات الهواتف (توليد تلقائي) ============
+        const catalog = {
+            "Samsung Galaxy A": ["A01","A02","A02s","A03","A03s","A04","A04s","A05","A05s","A06","A10","A10s","A11","A12","A13","A14","A15","A16","A17","A20","A20s","A21","A21s","A22","A23","A24","A25","A26","A27","A30","A30s","A31","A32","A33","A34","A35","A36","A37","A50","A50s","A51","A52","A52s","A53","A54","A55","A56","A57","A70","A71","A72","A73"],
+            "Samsung Galaxy S": ["S8","S9","S10","S10e","S10+","S20","S20 FE","S20+","S20 Ultra","S21","S21 FE","S21+","S21 Ultra","S22","S22+","S22 Ultra","S23","S23 FE","S23+","S23 Ultra","S24","S24+","S24 Ultra","S25","S25+","S25 Ultra","S26","S26+","S26 Ultra"],
+            "Samsung Galaxy Z": ["Z Flip3","Z Flip4","Z Flip5","Z Flip6","Z Flip7","Z Flip8","Z Fold3","Z Fold4","Z Fold5","Z Fold6","Z Fold7","Z Fold8"],
+            "Samsung Galaxy M": ["M01","M02","M11","M12","M13","M14","M15","M16","M21","M22","M23","M31","M32","M33","M34","M35","M51","M52","M53","M54","M55"],
+            "iPhone": ["6s","7","8","8 Plus","X","XR","XS","XS Max","11","11 Pro","11 Pro Max","12","12 mini","12 Pro","12 Pro Max","13","13 mini","13 Pro","13 Pro Max","14","14 Plus","14 Pro","14 Pro Max","15","15 Plus","15 Pro","15 Pro Max","16","16 Plus","16 Pro","16 Pro Max","17","17 Pro","17 Pro Max","Air","SE 2","SE 3","SE 4"],
+            "Redmi Note": ["8","9","9 Pro","10","10 Pro","11","11 Pro","11S","12","12 Pro","12 Pro+","12S","13","13 Pro","13 Pro+","14","14 Pro","14 Pro+","15","15 Pro","15 Pro+","15S"],
+            "Redmi": ["4","5","6","7","8","9","9A","9C","10","10A","10C","12","12C","13","13C","14","14C","15","15C","A1","A2","A3","A5"],
+            "Poco": ["C3","C4","C31","C40","C50","C51","C55","C61","C65","C71","C75","C81","C81 Pro","C85","M2","M3","M4","M5","M5s","M6","M7","M7 Pro","X2","X3","X3 Pro","X4","X4 Pro","X5","X5 Pro","X6","X6 Pro","X7","X8 Pro","X8 Pro Max","F1","F2","F3","F4","F5","F5 Pro","F6","F6 Pro","F7","F7 Pro","F7 Ultra","F8 Pro","F8 Ultra"],
+            "Xiaomi": ["Mi 9","Mi 10","Mi 10T","Mi 11","Mi 11 Lite","11T","11T Pro","12","12 Pro","12T","12T Pro","13","13 Pro","13T","13T Pro","14","14 Pro","14T","14T Pro","15","15 Pro","15T","15T Pro","17T","17T Pro","17","17 Ultra"],
+            "Infinix": ["Smart 4","Smart 5","Smart 6","Smart 7","Smart 8","Smart 9","Hot 8","Hot 9","Hot 10","Hot 10s","Hot 11","Hot 11s","Hot 12","Hot 12i","Hot 20","Hot 30","Hot 30i","Hot 40","Hot 40i","Hot 50","Hot 60 Pro","Note 7","Note 8","Note 10","Note 11","Note 11s","Note 12","Note 30","Note 40","Note 40 Pro","Note 50","Note 50X","Note 60 Ultra","Zero 5","Zero 8","Zero 30","Zero 40"],
+            "Tecno": ["Spark 4","Spark 5","Spark 6","Spark 7","Spark 8","Spark 9","Spark 10","Spark 20","Spark 20C","Spark 20 Pro","Spark 30C","Spark 30 Pro","Spark 40","Spark 40 Pro+","Spark Go 1","Spark Go 2","Camon 12","Camon 15","Camon 16","Camon 17","Camon 18","Camon 19","Camon 20","Camon 30","Camon 40","Camon 50","Camon 50 Pro","Pova 2","Pova 3","Pova 4","Pova 5","Pova 6","Pova Neo","Pova Neo 2","Pova 7","Pova 7 5G","Phantom V Flip","Phantom V Fold","Phantom X2"],
+            "Realme": ["C2","C3","C11","C12","C15","C20","C21","C25","C30","C31","C33","C35","C51","C53","C55","C65","C67","C75","9","9 Pro","10","10 Pro","11","11 Pro","12","12 Pro","13","13 Pro","14","14 Pro","15","15 Pro","16","16 Pro","Narzo 10","Narzo 20","Narzo 30","Narzo 40","Narzo 50","Narzo 60","Narzo 70","Narzo 70 Pro","Narzo 80"],
+            "Vivo": ["Y11","Y12","Y15","Y16","Y17","Y18","Y19","Y20","Y21","Y22","Y27","Y28","Y33","Y36","Y38","Y51","Y53","T1","T2","T3","T4","T5","T5 Pro","V11","V15","V19","V20","V21","V23","V25","V27","V29","V30","V40","V70 FE"],
+            "OPPO": ["A3s","A5s","A9","A12","A15","A16","A17","A18","A31","A33","A38","A52","A53","A54","A57","A58","A74","A76","A77","A78","A79","A3 Pro","A5 Pro","Reno2","Reno3","Reno4","Reno5","Reno6","Reno7","Reno8","Reno10","Reno11","Reno12","Reno12 Pro","F9","F11","F15","F17","F19","F21","F23","F25","F29 Pro"],
+            "Honor": ["X5","X6","X7","X7e","X8","X9","X10","X30","X40","X50","X60","X70","Play 6","Play 7","Play 8","Play 9","Play 10","50","60","70","80","90","200","500 Smart"],
+            "Motorola": ["Moto E7","Moto E13","Moto E22","Moto G10","Moto G20","Moto G30","Moto G37","Moto G42","Moto G52","Moto G53","Moto G62","Moto G72","Moto G82","Moto Edge 20","Moto Edge 30","Moto Edge 40","Moto Edge 50"],
+            "Nokia": ["G10","G20","G21","G22","G42","G50","G60","X10","X20","X30","C10","C20","C21","C31","C32"],
+            "Google Pixel": ["4","4a","5","5a","6","6a","6 Pro","7","7a","7 Pro","8","8a","8 Pro","9","9 Pro","9a"],
+            "Huawei": ["Y5p","Y6p","Y7a","Y9a","Nova 5","Nova 7","Nova 8","Nova 9","Nova 10","Nova 11","Nova 12","Nova 13","P30","P40","P50","P60","P70","Mate 30","Mate 40","Mate 50","Mate 60"],
+            "OnePlus": ["Nord","Nord 2","Nord 3","Nord 4","Nord CE","Nord CE 2","Nord CE 3","Nord CE 4","8","8T","9","9R","9RT","10R","10T","11","12","13","Ace","Ace 2","Ace 3","Ace 5"],
+            "Sony": ["Xperia 10 III","Xperia 10 IV","Xperia 10 V","Xperia 10 VI","Xperia 1 III","Xperia 1 IV","Xperia 1 V","Xperia 1 VI","Xperia 5 III","Xperia 5 IV","Xperia 5 V"],
+            "Asus": ["Zenfone 8","Zenfone 9","Zenfone 10","Zenfone 11","ROG Phone 5","ROG Phone 6","ROG Phone 7","ROG Phone 8"],
+            "Meizu": ["16","17","18","18 Pro","20","21","Note 8","Note 9","Note 10"],
+            "Nothing": ["Phone (1)","Phone (2)","Phone (2a)","Phone (3)","Phone (3a)"],
+            "Lenovo": ["K12","K13","K14","Z5","Z6"],
+            "ZTE": ["Blade A51","Blade A71","Blade V40","Blade V50","Axon 30","Axon 40","Axon 50"],
+            "TCL": ["20 SE","20 Pro","30 SE","30 Pro","40 SE","40 Pro","50 SE","50 Pro"],
+            "BlackBerry": ["Key2","Key2 LE","Evolve"],
+            "LG": ["K40","K50","K52","K61","K62","Velvet","Wing","G8","G8X","V50","V60"]
+        };
+
+        const select = document.getElementById('deviceSelect');
+
+        // توليد الخيارات
+        for (const [series, models] of Object.entries(catalog)) {
+            models.forEach(m => {
+                const opt = document.createElement('option');
+                opt.value = (series + " " + m).toLowerCase().replace(/\s+/g, "_").replace(/[()]/g, "");
+                opt.textContent = series + " " + m;
+                select.appendChild(opt);
+            });
+        }
+
+        // عرض عدد الهواتف
+        const totalDevices = select.options.length - 1;
+        document.getElementById('deviceCount').textContent = "إجمالي الهواتف المتاحة: " + totalDevices;
+
+        // ============ البحث ============
         function filterDevices() {
             let input = document.getElementById('searchInput').value.toLowerCase();
-            let select = document.getElementById('deviceSelect');
             let options = select.getElementsByTagName('option');
-
             for (let i = 0; i < options.length; i++) {
                 let txtValue = options[i].textContent || options[i].innerText;
-                if (txtValue.toLowerCase().indexOf(input) > -1) {
-                    options[i].style.display = "";
-                } else {
-                    options[i].style.display = "none";
-                }
+                options[i].style.display = (txtValue.toLowerCase().indexOf(input) > -1) ? "" : "none";
             }
         }
 
-        // توليد الحساسية والـ DPI بنسب محددة بين 1 و 200
+        // ============ توليد الحساسية ============
         function generateSensitivity() {
-            let select = document.getElementById('deviceSelect');
-            if (!select.value) {
-                alert("يرجى اختيار اسم هاتفك أولاً من القائمة!");
-                return;
-            }
-
-            // توليد أرقام عشوائية موزونة بين 100 و 200
-            document.getElementById('sensGen').innerText = Math.floor(Math.random() * (200 - 160 + 1)) + 160;
-            document.getElementById('sensRed').innerText = Math.floor(Math.random() * (200 - 170 + 1)) + 170;
-            document.getElementById('sens2x').innerText = Math.floor(Math.random() * (200 - 150 + 1)) + 150;
-            document.getElementById('sens4x').innerText = Math.floor(Math.random() * (200 - 150 + 1)) + 150;
-            document.getElementById('sensSniper').innerText = Math.floor(Math.random() * (150 - 80 + 1)) + 80;
-            document.getElementById('sensFree').innerText = Math.floor(Math.random() * (200 - 100 + 1)) + 100;
-            document.getElementById('sensBtn').innerText = (Math.floor(Math.random() * (55 - 40 + 1)) + 40) + "%";
-            document.getElementById('sensDpi').innerText = (Math.floor(Math.random() * (900 - 500 + 1)) + 500) + " DPI";
-
+            if (!select.value) { alert("يرجى اختيار اسم هاتفك أولاً من القائمة!"); return; }
+            document.getElementById('sensGen').innerText = Math.floor(Math.random() * 41) + 160;
+            document.getElementById('sensRed').innerText = Math.floor(Math.random() * 31) + 170;
+            document.getElementById('sens2x').innerText = Math.floor(Math.random() * 51) + 150;
+            document.getElementById('sens4x').innerText = Math.floor(Math.random() * 51) + 150;
+            document.getElementById('sensSniper').innerText = Math.floor(Math.random() * 71) + 80;
+            document.getElementById('sensFree').innerText = Math.floor(Math.random() * 101) + 100;
+            document.getElementById('sensBtn').innerText = (Math.floor(Math.random() * 16) + 40) + "%";
+            document.getElementById('sensDpi').innerText = (Math.floor(Math.random() * 401) + 500) + " DPI";
             document.getElementById('results').style.display = "block";
         }
     </script>
 </body>
-</html>
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Tajawal', sans-serif;
-        }
-
-        body {
-            background-color: #050508;
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px 10px;
-            overflow-x: hidden;
-        }
-
-        /* Top Admin Bar */
-        .admin-badge {
-            background: rgba(0, 210, 255, 0.1);
-            border: 1px solid #00d2ff;
-            color: #00d2ff;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin-bottom: 25px;
-            box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
-        }
-
-        /* Title Styling */
-        .title-container {
-            text-align: center;
-            margin-bottom: 15px;
-        }
-
-        .main-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: #00d2ff;
-            text-shadow: 0 0 20px rgba(0, 210, 255, 0.6);
-            letter-spacing: 2px;
-        }
-
-        .main-title .xx-text {
-            color: #ff007f;
-            margin-right: 15px;
-            text-shadow: 0 0 20px rgba(255, 0, 127, 0.6);
-        }
-
-        .sub-text {
-            color: #a0a5b5;
-            font-size: 0.95rem;
-            margin-top: 8px;
-            text-align: center;
-        }
-
-        /* Curved Pill Card Container */
-        .pill-card {
-            background: rgba(15, 18, 28, 0.85);
-            border: 2px solid rgba(0, 210, 255, 0.3);
-            border-radius: 40px; /* الجوانب قوسية كبسولية */
-            width: 100%;
-            max-width: 480px;
-            padding: 30px 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 210, 255, 0.15);
-            backdrop-filter: blur(10px);
-            margin-top: 20px;
-        }
-
-        .section-label {
-            font-size: 1.1rem;
-            color: #00d2ff;
-            margin-bottom: 12px;
-            display: block;
-            font-weight: bold;
-        }
-
-        /* Device Search Section */
-        .search-box {
-            position: relative;
-            margin-bottom: 15px;
-        }
-
-        .search-box input {
-            width: 100%;
-            padding: 12px 15px;
-            background: #0a0d14;
-            border: 1px solid #1a233a;
-            border-radius: 15px;
-            color: #fff;
-            font-size: 0.95rem;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        .search-box input:focus {
-            border-color: #00d2ff;
-            box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
-        }
-
-        .device-select {
-            width: 100%;
-            padding: 12px 15px;
-            background: #0a0d14;
-            border: 1px solid #1a233a;
-            border-radius: 15px;
-            color: #fff;
-            font-size: 0.95rem;
-            outline: none;
-            max-height: 150px;
-            cursor: pointer;
-        }
-
-        /* Custom Action Button */
-        .btn-enter {
-            width: 100%;
-            padding: 14px;
-            background: linear-gradient(90deg, #00d2ff, #ff007f);
-            border: none;
-            border-radius: 25px;
-            color: #ffffff;
-            font-weight: bold;
-            font-size: 1.1rem;
-            cursor: pointer;
-            margin-top: 20px;
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
-            transition: 0.3s transform;
-        }
-
-        .btn-enter:active {
-            transform: scale(0.98);
-        }
-
-        /* Results Box (Sensitivities 1 to 200 & DPI) */
-        .results-box {
-            display: none;
-            margin-top: 25px;
-            background: rgba(5, 7, 12, 0.9);
-            border-radius: 25px;
-            padding: 20px;
-            border: 1px solid #ff007f;
-        }
-
-        .sens-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .sens-item:last-child {
-            border-bottom: none;
-        }
-
-        .sens-name {
-            color: #a0a5b5;
-            font-size: 0.95rem;
-        }
-
-        .sens-value {
-            color: #00d2ff;
-            font-weight: bold;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.1rem;
-        }
-
-        .dpi-value {
-            color: #ff007f;
-            font-weight: bold;
-            font-family: 'Orbitron', sans-serif;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Admin Identifier -->
-    <div class="admin-badge">
-        ADMIN: cj.1wq21wq2@gmail.com
-    </div>
-
-    <!-- Header Title -->
-    <div class="title-container">
-        <h1 class="main-title">WELCOME TO SPYRØ <span class="xx-text">XX</span></h1>
-        <p class="sub-text">أقوى مولد حساسية وهيدشوت بدقة 4K لجميع الهواتف</p>
-    </div>
-
-    <!-- Curved Pill Box -->
-    <div class="pill-card">
-        <label class="section-label">ENTER YOUR PHONE / ابحث عن هاتفك:</label>
-        
-        <!-- Search Input -->
-        <div class="search-box">
-            <input type="text" id="searchInput" onkeyup="filterDevices()" placeholder="ابحث باسم هاتفك هنا...">
-        </div>
-
-        <!-- Devices List -->
-        <select id="deviceSelect" class="device-select" size="5">
-            <option value="samsung_a04s">Samsung Galaxy A04s</option>
-            <option value="samsung_a12">Samsung Galaxy A12</option>
-            <option value="samsung_a54">Samsung Galaxy A54</option>
-            <option value="iphone_11">iPhone 11 / 11 Pro</option>
-            <option value="iphone_13">iPhone 13 / 14</option>
-            <option value="poco_x3">Poco X3 Pro / NFC</option>
-            <option value="poco_f5">Poco F5 / F6</option>
-            <option value="redmi_note_11">Xiaomi Redmi Note 11</option>
-            <option value="infinix_hot12">Infinix Hot 12 / Note 12</option>
-            <option value="tecno_pova">Tecno Pova 4 / Neo</option>
-            <option value="realme_c35">Realme C35 / C55</option>
-        </select>
-
-        <button class="btn-enter" onclick="generateSensitivity()">ENTER / استخراج الحساسية</button>
-
-        <!-- Sensitivities Display (Values 1 - 200) -->
-        <div id="results" class="results-box">
-            <div class="sens-item">
-                <span class="sens-name">عام (General):</span>
-                <span class="sens-value" id="sensGen">188</span>
-            </div>
-            <div class="sens-item">
-                <span class="sens-name">نقطة حمراء (Red Dot):</span>
-                <span class="sens-value" id="sensRed">195</span>
-            </div>
-            <div class="sens-item">
-                <span class="sens-name">عدسة 2X:</span>
-                <span class="sens-value" id="sens2x">175</span>
-            </div>
-            <div class="sens-item">
-                <span class="sens-name">عدسة 4X:</span>
-                <span class="sens-value" id="sens4x">182</span>
-            </div>
-            <div class="sens-item">
-                <span class="sens-name">عدسة القناصة (Sniper):</span>
-                <span class="sens-value" id="sensSniper">120</span>
-            </div>
-            <div class="sens-item">
-                <span class="sens-name">نظرة حرة (Free Look):</span>
-                <span class="sens-value" id="sensFree">150</span>
-            </div>
-            <div class="sens-item">
-                <span class="sens-name">زر الضرب (Fire Button):</span>
-                <span class="sens-value" id="sensBtn">48%</span>
-            </div>
-            <div class="sens-item">
-                <span class="sens-name">معدل الـ DPI المقترح:</span>
-                <span class="dpi-value" id="sensDpi">600 DPI</span>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // البحث الفوري في قائمة الهواتف
-        function filterDevices() {
-            let input = document.getElementById('searchInput').value.toLowerCase();
-            let select = document.getElementById('deviceSelect');
-            let options = select.getElementsByTagName('option');
-
-            for (let i = 0; i < options.length; i++) {
-                let txtValue = options[i].textContent || options[i].innerText;
-                if (txtValue.toLowerCase().indexOf(input) > -1) {
-                    options[i].style.display = "";
-                } else {
-                    options[i].style.display = "none";
-                }
-            }
-        }
-
-        // توليد الحساسية والـ DPI بنسب محددة بين 1 و 200
-        function generateSensitivity() {
-            let select = document.getElementById('deviceSelect');
-            if (!select.value) {
-                alert("يرجى اختيار اسم هاتفك أولاً من القائمة!");
-                return;
-            }
-
-            // توليد أرقام عشوائية موزونة بين 100 و 200
-            document.getElementById('sensGen').innerText = Math.floor(Math.random() * (200 - 160 + 1)) + 160;
-            document.getElementById('sensRed').innerText = Math.floor(Math.random() * (200 - 170 + 1)) + 170;
-            document.getElementById('sens2x').innerText = Math.floor(Math.random() * (200 - 150 + 1)) + 150;
-            document.getElementById('sens4x').innerText = Math.floor(Math.random() * (200 - 150 + 1)) + 150;
-            document.getElementById('sensSniper').innerText = Math.floor(Math.random() * (150 - 80 + 1)) + 80;
-            document.getElementById('sensFree').innerText = Math.floor(Math.random() * (200 - 100 + 1)) + 100;
-            document.getElementById('sensBtn').innerText = (Math.floor(Math.random() * (55 - 40 + 1)) + 40) + "%";
-            document.getElementById('sensDpi').innerText = (Math.floor(Math.random() * (900 - 500 + 1)) + 500) + " DPI";
-
-            document.getElementById('results').style.display = "block";
-        }
-    </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WELCOME TO SPYRØ XX</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Tajawal', sans-serif;
-        }
-
-        body {
-            background-color: #050508;
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px 10px;
-            overflow-x: hidden;
-        }
-
-        /* Top Admin Bar */
-        .admin-badge {
-            background: rgba(0, 210, 255, 0.1);
-            border: 1px solid #00d2ff;
-            color: #00d2ff;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin-bottom: 25px;
-            box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
-        }
-
-        /* Title Styling */
-        .title-container {
-            text-align: center;
-            margin-bottom: 15px;
-        }
-
-        .main-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: #00d2ff;
-            text-shadow: 0 0 20px rgba(0, 210, 255, 0.6);
-            letter-spacing: 2px;
-        }
-
-        .main-title .xx-text {
-            color: #ff007f;
-            margin-right: 15px;
-            text-shadow: 0 0 20px rgba(255, 0, 127, 0.6);
-        }
-
-        .sub-text {
-            color: #a0a5b5;
-            font-size: 0.95rem;
-            margin-top: 8px;
-            text-align: center;
-        }
-
-        /* Curved Pill Card Container */
-        .pill-card {
-            background: rgba(15, 18, 28, 0.85);
-            border: 2px solid rgba(0, 210, 255, 0.3);
-            border-radius: 40px; /* الجوانب قوسية كبسولية */
-            width: 100%;
-            max-width: 480px;
-            padding: 30px 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 210, 255, 0.15);
-            backdrop-filter: blur(10px);
-            margin-top: 20px;
-        }
-
-        .section-label {
-            font-size: 1.1rem;
-            color: #00d2ff;
-            margin-bottom: 12px;
-            display: block;
-            font-weight: bold;
-        }
-
-        /* Device Search Section */
-        .search-box {
-            position: relative;
-            margin-bottom: 15px;
-        }
-
-        .search-box input {
-            width: 100%;
-            padding: 12px 15px;
-            background: #0a0d14;
-            border: 1px solid #1a233a;
-            border-radius: 15px;
-            color: #fff;
-            font-size: 0.95rem;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        .search-box input:focus {
-            border-color: #00d2ff;
-            box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
-        }
-
-        .device-select {
-            width: 100%;
-            padding: 12px 15px;
-            background: #0a0d14;
-            border: 1px solid #1a233a;
-            border-radius: 15px;
-            color: #fff;
-            font-size: 0.95rem;
-            outline: none;
-            max-height: 150px;
-            cursor: pointer;
-        }
-
-        /* Custom Action Button */
-        .btn-enter {
-            width: 100%;
-            padding: 14px;
-            background: linear-gradient(90deg, #00d2ff, #ff007f);
-            border: none;
-            border-radius: 25px;
-            color: #ffffff;
-            font-weight: bold;
-            font-size: 1.1rem;
-            cursor: pointer;8
-            margin-top: 20px;
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
-            transition: 0.3s transform;
-        }
-
-        .btn-enter:active {
-            transform: scale(0.98);
-        }
-
-        /* Results Box (Sensitivities 1 to 200 & DPI) */
-        .results-box {
-            display: none;
-            margin-top: 25px;
-            background: rgba(5, 7, 12, 0.9);
-            border-radius: 25px;
-            padding: 20px;
-            border: 1px solid #ff007f;
-        }
-
-        .sens-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .sens-item:last-child {
-            border-bottom: none;
-        }
-
-        .sens-name {
-            color: #a0a5b5;
-            font-size: 0.95rem;
-        }
-
-        .sens-value {
-            color: #00d2ff;
-            font-weight: bold;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.1rem;
-        }
-
-        .dpi-value {
-            color: #ff007f;
-            font-weight: bold;
-            font-family: 'Orbitron', sans-serif;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Admin Identifier -->
-    <div class="admin-badge">
-        ADMIN: cj.1wq21wq2@gmail.com
-    </div>
-
-    <!-- Header Title -->
-    <div class="title-container">
-        <h1 class="main-title">WELCOME TO SPYRØ <span class="xx-text">XX</span></h1>
-        <p class="sub-text">أقوى مولد حساسية وهيدشوت بدقة 4K لجميع الهواتف</p>
-    </div>
-
-    <!-- Curved Pill Box -->
-    <div class="pill-card">
-        <label class="section-label">ENTER YOUR PHONE / ابحث عن هاتفك:</label>
-        
-        <!-- Search Input -->
-        <div class="search-box">
-            <input type="text" id="searchInput" onkeyup="filterDevices()" placeholder="ابحث باسم هاتفك هنا...">
-        </div>
-
-        <!-- Devices List -->
-        <select id="deviceSelect" class="device-select" size="5">
-            <option value="samsung_a04s">Samsung Galaxy A04s</option>
-            <option value="samsung_a12">Samsung Galaxy A12</option>
-            <option value="samsung_a54">Samsung Galaxy A54</option>
-            <option value="iphone_11">iPhone 11 / 11 Pro</option>
-            <option value="iphone_13">iPhone 13 / 14</option>
-            <option value="poco_x3">Poco X3 Pro / NFC</option>
-            <option value="poco_f5">Poco F5 / F6</option>
-            <option value="redmi_note_11">Xiaomi Redmi Note 11</option>
-            <option value="infinix_hot12">Infinix Hot 12 / Note 12</option>
-            <option value="tecno_pova">Tecno Pova 4 / Neo</option>
-            <option value="realme_c35">Realme C35 / C55</option>
-        </select>
-
-        <button class="btn-enter" onclick="generateSensitivity()">ENTER / استخراج الحساسية</button>
-
-        <!-- Sensitivities Display (Values 1 - 200) -->
-        <div id="results" class="results-box">
-            <div class="sens-item">
-                <span class="sens-name">عام (General):</span>
-                <span class="sens-value" id="sensGen">188</span>
-            </div>
-            <div class="sens-item">
-                <span class="sens-name">نقطة حمراء (Red Dot):</span>
-                <span class="sens-value" id="sensRed">195</span>
-            </div>
-            <div class="sens-item">
-                <span class="sens-name">عدسة 2X:</span>
-                <span class="sens-value" id="sens2x">175</span>
-            </div>
-            <div class="sens-item">
-                <span class="sens-name">عدسة 4X:</span>
-                <span class="sens-value" id="sens4x">182</span>
-            </div>
-            <div class="sens-item">
-                <span class="sens-name">عدسة القناصة (Sniper):</span>
-                <span class="sens-value" id="sensSniper">120</span>
-            </div>
-            <div class="sens-item">
-                <span class="sens-name">نظرة حرة (Free Look):</span>
-                <span class="sens-value" id="sensFree">150</span>
-            </div>
-            <div class="sens-item">
-                <span class="sens-name">زر الضرب (Fire Button):</span>
-                <span class="sens-value" id="sensBtn">48%</span>
-            </div>
-            <div class="sens-item">
-                <span class="sens-name">معدل الـ DPI المقترح:</span>
-                <span class="dpi-value" id="sensDpi">600 DPI</span>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // البحث الفوري في قائمة الهواتف
-        function filterDevices() {
-            let input = document.getElementById('searchInput').value.toLowerCase();
-            let select = document.getElementById('deviceSelect');
-            let options = select.getElementsByTagName('option');
-
-            for (let i = 0; i < options.length; i++) {
-                let txtValue = options[i].textContent || options[i].innerText;
-                if (txtValue.toLowerCase().indexOf(input) > -1) {
-                    options[i].style.display = "";
-                } else {
-                    options[i].style.display = "none";
-                }
-            }
-        }
-
-        // توليد الحساسية والـ DPI بنسب محددة بين 1 و 200
-        function generateSensitivity() {
-            let select = document.getElementById('deviceSelect');
-            if (!select.value) {
-                alert("يرجى اختيار اسم هاتفك أولاً من القائمة!");
-                return;
-            }
-
-            // توليد أرقام عشوائية موزونة بين 100 و 200
-            document.getElementById('sensGen').innerText = Math.floor(Math.random() * (200 - 160 + 1)) + 160;
-            document.getElementById('sensRed').innerText = Math.floor(Math.random() * (200 - 170 + 1)) + 170;
-            document.getElementById('sens2x').innerText = Math.floor(Math.random() * (200 - 150 + 1)) + 150;
-            document.getElementById('sens4x').innerText = Math.floor(Math.random() * (200 - 150 + 1)) + 150;
-            document.getElementById('sensSniper').innerText = Math.floor(Math.random() * (150 - 80 + 1)) + 80;
-            document.getElementById('sensFree').innerText = Math.floor(Math.random() * (200 - 100 + 1)) + 100;
-            document.getElementById('sensBtn').innerText = (Math.floor(Math.random() * (55 - 40 + 1)) + 40) + "%";
-            document.getElementById('sensDpi').innerText = (Math.floor(Math.random() * (900 - 500 + 1)) + 500) + " DPI";
-
-            document.getElementById('results').style.display = "block";
-        }
-    </script>
-</body>
-</html>
+                                       </html>
