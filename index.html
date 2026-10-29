@@ -3,179 +3,334 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WELLCOM TO SPIRO X</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <title>أستاذة نادية المحامية - خدمات الاستشارات والأوراق القانونية</title>
+    <!-- خط تجوال من Google Fonts لمظهر احترافي 4K -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Tajawal', sans-serif; }
+        /* إعدادات الخلفية والتصميم العام (Ultra Clean Dark Mode) */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
         body {
-            background-color: #050508; color: #fff; min-height: 100vh;
-            display: flex; flex-direction: column; align-items: center;
-            padding: 20px 10px; overflow-x: hidden;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-image: radial-gradient(circle at 50% 0%, #1a1a1a 0%, #0a0a0a 75%);
         }
-        .admin-badge {
-            background: rgba(0,210,255,0.1); border: 1px solid #00d2ff; color: #00d2ff;
-            padding: 6px 16px; border-radius: 20px; font-size: .85rem; margin-bottom: 25px;
-            box-shadow: 0 0 10px rgba(0,210,255,.2);
+
+        .container {
+            width: 100%;
+            max-width: 580px;
+            background: rgba(18, 18, 18, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 24px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 255, 255, 0.03);
         }
-        .title-container { text-align: center; margin-bottom: 15px; }
-        .main-title {
-            font-family: 'Orbitron', sans-serif; font-size: 2.2rem; font-weight: 900;
-            color: #00d2ff; text-shadow: 0 0 20px rgba(0,210,255,.6); letter-spacing: 2px;
+
+        /* الهيدر وشعار المحاماة */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
         }
-        .main-title .xx-text {
-            color: #ff007f; margin-right: 15px; text-shadow: 0 0 20px rgba(255,0,127,.6);
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
         }
-        .sub-text { color: #a0a5b5; font-size: .95rem; margin-top: 8px; text-align: center; }
-        .pill-card {
-            background: rgba(15,18,28,.85); border: 2px solid rgba(0,210,255,.3);
-            border-radius: 40px; width: 100%; max-width: 480px;
-            padding: 30px 20px; box-shadow: 0 10px 30px rgba(0,0,0,.8), 0 0 25px rgba(0,210,255,.15);
-            backdrop-filter: blur(10px); margin-top: 20px;
+
+        .scale-icon {
+            font-size: 42px;
+            color: #ffffff;
+            display: inline-block;
+            margin-top: 5px;
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
         }
-        .section-label { font-size: 1.1rem; color: #00d2ff; margin-bottom: 12px; display: block; font-weight: bold; }
-        .search-box { position: relative; margin-bottom: 15px; }
-        .search-box input {
-            width: 100%; padding: 12px 15px; background: #0a0d14;
-            border: 1px solid #1a233a; border-radius: 15px; color: #fff;
-            font-size: .95rem; outline: none; transition: .3s;
+
+        /* تصميم الحقول والمجموعات */
+        .form-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
         }
-        .search-box input:focus { border-color: #00d2ff; box-shadow: 0 0 10px rgba(0,210,255,.3); }
-        .device-select {
-            width: 100%; padding: 12px 15px; background: #0a0d14;
-            border: 1px solid #1a233a; border-radius: 15px; color: #fff;
-            font-size: .95rem; outline: none; cursor: pointer;
+
+        label {
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .device-select option { background: #0a0d14; color: #fff; padding: 8px; }
-        .device-count { font-size: .8rem; color: #a0a5b5; margin-top: 6px; text-align: center; }
-        .btn-enter {
-            width: 100%; padding: 14px; background: linear-gradient(90deg,#00d2ff,#ff007f);
-            border: none; border-radius: 25px; color: #fff; font-weight: bold;
-            font-size: 1.1rem; cursor: pointer; margin-top: 20px;
-            box-shadow: 0 0 15px rgba(0,210,255,.4); transition: .3s transform;
+
+        /* المدخلات والقوائم بالإنحناء الدائري الفخم */
+        input, select {
+            width: 100%;
+            padding: 14px 18px;
+            background-color: #141414;
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 15px;
+            outline: none;
+            transition: all 0.3s ease;
         }
-        .btn-enter:active { transform: scale(.98); }
-        .results-box {
-            display: none; margin-top: 25px; background: rgba(5,7,12,.9);
-            border-radius: 25px; padding: 20px; border: 1px solid #ff007f;
+
+        /* حقل التليفون LTR عشان الأرقام تظهر صح */
+        #whatsapp {
+            direction: ltr;
+            text-align: right;
         }
-        .sens-item {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.05);
+
+        select {
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: left 18px center;
+            background-size: 16px;
         }
-        .sens-item:last-child { border-bottom: none; }
-        .sens-name { color: #a0a5b5; font-size: .95rem; }
-        .sens-value { color: #00d2ff; font-weight: bold; font-family: 'Orbitron', sans-serif; font-size: 1.1rem; }
-        .dpi-value { color: #ff007f; font-weight: bold; font-family: 'Orbitron', sans-serif; }
+
+        select option {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        input:focus, select:focus {
+            border-color: #ffffff;
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+            background-color: #1c1c1c;
+        }
+
+        /* عرض السعر */
+        .price-badge {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-align: center;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 16px;
+            display: none;
+        }
+
+        /* رسالة الحالة */
+        .status-msg {
+            display: none;
+            text-align: center;
+            padding: 14px;
+            border-radius: 50px;
+            margin-top: 15px;
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .status-msg.success {
+            display: block;
+            background: rgba(40, 167, 69, 0.15);
+            border: 1px solid rgba(40, 167, 69, 0.6);
+            color: #4ade80;
+        }
+
+        .status-msg.error {
+            display: block;
+            background: rgba(220, 53, 69, 0.15);
+            border: 1px solid rgba(220, 53, 69, 0.6);
+            color: #f87171;
+        }
+
+        /* زر الإرسال */
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background-color: #ffffff;
+            color: #000000;
+            font-size: 17px;
+            font-weight: 900;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(255, 255, 255, 0.15);
+        }
+
+        .submit-btn:hover {
+            background-color: #e6e6e6;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.25);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
     </style>
 </head>
 <body>
 
-    <div class="admin-badge">ADMIN: cj.1wq21wq2@gmail.com</div>
-
-    <div class="title-container">
-        <h1 class="main-title">WELLCOM TO SPIRO <span class="xx-text">X</span></h1>
-        <p class="sub-text">أقوى مولد حساسية وهيدشوت بدقة 4K لجميع الهواتف</p>
-    </div>
-
-    <div class="pill-card">
-        <label class="section-label">ابحث عن هاتفك:</label>
-
-        <div class="search-box">
-            <input type="text" id="searchInput" onkeyup="filterDevices()" placeholder="اكتب اسم هاتفك هنا...">
+    <div class="container">
+        <!-- الهيدر -->
+        <div class="header">
+            <h1>أستاذه نادية المحامية</h1>
+            <div class="scale-icon">⚖️</div>
         </div>
 
-        <select id="deviceSelect" class="device-select">
-            <option value="">-- اختر هاتفك --</option>
-        </select>
-        <p class="device-count" id="deviceCount"></p>
+        <!-- فورم Web3Forms -->
+        <form id="lawForm" action="https://api.web3forms.com/submit" method="POST">
+            
+            <!-- مفتاح Web3Forms (مخفي) -->
+            <input type="hidden" name="access_key" value="c9c6559a-f742-4ec6-944a-055368731d42">
+            
+            <!-- موضوع الإيميل -->
+            <input type="hidden" name="subject" value="طلب خدمة جديد - أستاذة نادية المحامية">
+            
+            <!-- اسم المرسل اللي هيظهر في الإيميل -->
+            <input type="hidden" name="from_name" value="موقع أستاذة نادية المحامية">
 
-        <button class="btn-enter" onclick="generateSensitivity()">ENTER / استخراج الحساسية</button>
+            <!-- نوع المعاملة -->
+            <div class="form-group">
+                <label for="service">اختر نوع المعاملة</label>
+                <select id="service" name="نوع_المعاملة" required onchange="updatePrice()">
+                    <option value="" disabled selected>-- اضغط هنا للاختيار --</option>
+                    <option value="توكيل">توكيل</option>
+                    <option value="عقد بيع">عقد بيع</option>
+                    <option value="عقد إيجار">عقد إيجار</option>
+                </select>
+            </div>
 
-        <div id="results" class="results-box">
-            <div class="sens-item"><span class="sens-name">عام (General):</span><span class="sens-value" id="sensGen">188</span></div>
-            <div class="sens-item"><span class="sens-name">نقطة حمراء (Red Dot):</span><span class="sens-value" id="sensRed">195</span></div>
-            <div class="sens-item"><span class="sens-name">عدسة 2X:</span><span class="sens-value" id="sens2x">175</span></div>
-            <div class="sens-item"><span class="sens-name">عدسة 4X:</span><span class="sens-value" id="sens4x">182</span></div>
-            <div class="sens-item"><span class="sens-name">عدسة القناصة (Sniper):</span><span class="sens-value" id="sensSniper">120</span></div>
-            <div class="sens-item"><span class="sens-name">نظرة حرة (Free Look):</span><span class="sens-value" id="sensFree">150</span></div>
-            <div class="sens-item"><span class="sens-name">زر الضرب (Fire Button):</span><span class="sens-value" id="sensBtn">48%</span></div>
-            <div class="sens-item"><span class="sens-name">معدل الـ DPI المقترح:</span><span class="dpi-value" id="sensDpi">600 DPI</span></div>
-        </div>
+            <!-- مربع عرض السعر تلقائياً -->
+            <div id="priceBox" class="price-badge">
+                سعر الخدمة: <span id="priceValue">0</span> جنيه
+            </div>
+
+            <!-- اسم البائع -->
+            <div class="form-group">
+                <label for="seller">اسم البائع</label>
+                <input type="text" id="seller" name="اسم_البائع" placeholder="أدخل اسم البائع بالكامل" autocomplete="name" required>
+            </div>
+
+            <!-- اسم المشتري -->
+            <div class="form-group">
+                <label for="buyer">اسم المشتري</label>
+                <input type="text" id="buyer" name="اسم_المشتري" placeholder="أدخل اسم المشتري بالكامل" autocomplete="name" required>
+            </div>
+
+            <!-- رقم الواتساب -->
+            <div class="form-group">
+                <label for="whatsapp">رقم الواتساب</label>
+                <input type="tel" id="whatsapp" name="رقم_الواتساب" placeholder="01xxxxxxxx" 
+                       pattern="[0-9]{11}" maxlength="11" inputmode="numeric"
+                       title="أدخل 11 رقم فقط" autocomplete="tel" required>
+            </div>
+
+            <!-- رقم العملية -->
+            <div class="form-group">
+                <label for="transaction_id">رقم العملية</label>
+                <input type="text" id="transaction_id" name="رقم_العملية" placeholder="أدخل رقم العملية الحسابية" required>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">إرسال البيانات</button>
+
+            <!-- رسالة نجاح/فشل -->
+            <div id="statusMsg" class="status-msg"></div>
+        </form>
     </div>
 
+    <!-- كود الجافاسكريبت لتغيير السعر تلقائياً وإرسال الفورم -->
     <script>
-        // ============ قاعدة بيانات الهواتف (توليد تلقائي) ============
-        const catalog = {
-            "Samsung Galaxy A": ["A01","A02","A02s","A03","A03s","A04","A04s","A05","A05s","A06","A10","A10s","A11","A12","A13","A14","A15","A16","A17","A20","A20s","A21","A21s","A22","A23","A24","A25","A26","A27","A30","A30s","A31","A32","A33","A34","A35","A36","A37","A50","A50s","A51","A52","A52s","A53","A54","A55","A56","A57","A70","A71","A72","A73"],
-            "Samsung Galaxy S": ["S8","S9","S10","S10e","S10+","S20","S20 FE","S20+","S20 Ultra","S21","S21 FE","S21+","S21 Ultra","S22","S22+","S22 Ultra","S23","S23 FE","S23+","S23 Ultra","S24","S24+","S24 Ultra","S25","S25+","S25 Ultra","S26","S26+","S26 Ultra"],
-            "Samsung Galaxy Z": ["Z Flip3","Z Flip4","Z Flip5","Z Flip6","Z Flip7","Z Flip8","Z Fold3","Z Fold4","Z Fold5","Z Fold6","Z Fold7","Z Fold8"],
-            "Samsung Galaxy M": ["M01","M02","M11","M12","M13","M14","M15","M16","M21","M22","M23","M31","M32","M33","M34","M35","M51","M52","M53","M54","M55"],
-            "iPhone": ["6s","7","8","8 Plus","X","XR","XS","XS Max","11","11 Pro","11 Pro Max","12","12 mini","12 Pro","12 Pro Max","13","13 mini","13 Pro","13 Pro Max","14","14 Plus","14 Pro","14 Pro Max","15","15 Plus","15 Pro","15 Pro Max","16","16 Plus","16 Pro","16 Pro Max","17","17 Pro","17 Pro Max","Air","SE 2","SE 3","SE 4"],
-            "Redmi Note": ["8","9","9 Pro","10","10 Pro","11","11 Pro","11S","12","12 Pro","12 Pro+","12S","13","13 Pro","13 Pro+","14","14 Pro","14 Pro+","15","15 Pro","15 Pro+","15S"],
-            "Redmi": ["4","5","6","7","8","9","9A","9C","10","10A","10C","12","12C","13","13C","14","14C","15","15C","A1","A2","A3","A5"],
-            "Poco": ["C3","C4","C31","C40","C50","C51","C55","C61","C65","C71","C75","C81","C81 Pro","C85","M2","M3","M4","M5","M5s","M6","M7","M7 Pro","X2","X3","X3 Pro","X4","X4 Pro","X5","X5 Pro","X6","X6 Pro","X7","X8 Pro","X8 Pro Max","F1","F2","F3","F4","F5","F5 Pro","F6","F6 Pro","F7","F7 Pro","F7 Ultra","F8 Pro","F8 Ultra"],
-            "Xiaomi": ["Mi 9","Mi 10","Mi 10T","Mi 11","Mi 11 Lite","11T","11T Pro","12","12 Pro","12T","12T Pro","13","13 Pro","13T","13T Pro","14","14 Pro","14T","14T Pro","15","15 Pro","15T","15T Pro","17T","17T Pro","17","17 Ultra"],
-            "Infinix": ["Smart 4","Smart 5","Smart 6","Smart 7","Smart 8","Smart 9","Hot 8","Hot 9","Hot 10","Hot 10s","Hot 11","Hot 11s","Hot 12","Hot 12i","Hot 20","Hot 30","Hot 30i","Hot 40","Hot 40i","Hot 50","Hot 60 Pro","Note 7","Note 8","Note 10","Note 11","Note 11s","Note 12","Note 30","Note 40","Note 40 Pro","Note 50","Note 50X","Note 60 Ultra","Zero 5","Zero 8","Zero 30","Zero 40"],
-            "Tecno": ["Spark 4","Spark 5","Spark 6","Spark 7","Spark 8","Spark 9","Spark 10","Spark 20","Spark 20C","Spark 20 Pro","Spark 30C","Spark 30 Pro","Spark 40","Spark 40 Pro+","Spark Go 1","Spark Go 2","Camon 12","Camon 15","Camon 16","Camon 17","Camon 18","Camon 19","Camon 20","Camon 30","Camon 40","Camon 50","Camon 50 Pro","Pova 2","Pova 3","Pova 4","Pova 5","Pova 6","Pova Neo","Pova Neo 2","Pova 7","Pova 7 5G","Phantom V Flip","Phantom V Fold","Phantom X2"],
-            "Realme": ["C2","C3","C11","C12","C15","C20","C21","C25","C30","C31","C33","C35","C51","C53","C55","C65","C67","C75","9","9 Pro","10","10 Pro","11","11 Pro","12","12 Pro","13","13 Pro","14","14 Pro","15","15 Pro","16","16 Pro","Narzo 10","Narzo 20","Narzo 30","Narzo 40","Narzo 50","Narzo 60","Narzo 70","Narzo 70 Pro","Narzo 80"],
-            "Vivo": ["Y11","Y12","Y15","Y16","Y17","Y18","Y19","Y20","Y21","Y22","Y27","Y28","Y33","Y36","Y38","Y51","Y53","T1","T2","T3","T4","T5","T5 Pro","V11","V15","V19","V20","V21","V23","V25","V27","V29","V30","V40","V70 FE"],
-            "OPPO": ["A3s","A5s","A9","A12","A15","A16","A17","A18","A31","A33","A38","A52","A53","A54","A57","A58","A74","A76","A77","A78","A79","A3 Pro","A5 Pro","Reno2","Reno3","Reno4","Reno5","Reno6","Reno7","Reno8","Reno10","Reno11","Reno12","Reno12 Pro","F9","F11","F15","F17","F19","F21","F23","F25","F29 Pro"],
-            "Honor": ["X5","X6","X7","X7e","X8","X9","X10","X30","X40","X50","X60","X70","Play 6","Play 7","Play 8","Play 9","Play 10","50","60","70","80","90","200","500 Smart"],
-            "Motorola": ["Moto E7","Moto E13","Moto E22","Moto G10","Moto G20","Moto G30","Moto G37","Moto G42","Moto G52","Moto G53","Moto G62","Moto G72","Moto G82","Moto Edge 20","Moto Edge 30","Moto Edge 40","Moto Edge 50"],
-            "Nokia": ["G10","G20","G21","G22","G42","G50","G60","X10","X20","X30","C10","C20","C21","C31","C32"],
-            "Google Pixel": ["4","4a","5","5a","6","6a","6 Pro","7","7a","7 Pro","8","8a","8 Pro","9","9 Pro","9a"],
-            "Huawei": ["Y5p","Y6p","Y7a","Y9a","Nova 5","Nova 7","Nova 8","Nova 9","Nova 10","Nova 11","Nova 12","Nova 13","P30","P40","P50","P60","P70","Mate 30","Mate 40","Mate 50","Mate 60"],
-            "OnePlus": ["Nord","Nord 2","Nord 3","Nord 4","Nord CE","Nord CE 2","Nord CE 3","Nord CE 4","8","8T","9","9R","9RT","10R","10T","11","12","13","Ace","Ace 2","Ace 3","Ace 5"],
-            "Sony": ["Xperia 10 III","Xperia 10 IV","Xperia 10 V","Xperia 10 VI","Xperia 1 III","Xperia 1 IV","Xperia 1 V","Xperia 1 VI","Xperia 5 III","Xperia 5 IV","Xperia 5 V"],
-            "Asus": ["Zenfone 8","Zenfone 9","Zenfone 10","Zenfone 11","ROG Phone 5","ROG Phone 6","ROG Phone 7","ROG Phone 8"],
-            "Meizu": ["16","17","18","18 Pro","20","21","Note 8","Note 9","Note 10"],
-            "Nothing": ["Phone (1)","Phone (2)","Phone (2a)","Phone (3)","Phone (3a)"],
-            "Lenovo": ["K12","K13","K14","Z5","Z6"],
-            "ZTE": ["Blade A51","Blade A71","Blade V40","Blade V50","Axon 30","Axon 40","Axon 50"],
-            "TCL": ["20 SE","20 Pro","30 SE","30 Pro","40 SE","40 Pro","50 SE","50 Pro"],
-            "BlackBerry": ["Key2","Key2 LE","Evolve"],
-            "LG": ["K40","K50","K52","K61","K62","Velvet","Wing","G8","G8X","V50","V60"]
-        };
+        function updatePrice() {
+            const serviceSelect = document.getElementById('service');
+            const priceBox = document.getElementById('priceBox');
+            const priceValue = document.getElementById('priceValue');
 
-        const select = document.getElementById('deviceSelect');
+            let price = "";
+            
+            if (serviceSelect.value === "توكيل") {
+                price = "250,000";
+            } else if (serviceSelect.value === "عقد بيع") {
+                price = "500,000";
+            } else if (serviceSelect.value === "عقد إيجار") {
+                price = "300,000";
+            }
 
-        // توليد الخيارات
-        for (const [series, models] of Object.entries(catalog)) {
-            models.forEach(m => {
-                const opt = document.createElement('option');
-                opt.value = (series + " " + m).toLowerCase().replace(/\s+/g, "_").replace(/[()]/g, "");
-                opt.textContent = series + " " + m;
-                select.appendChild(opt);
-            });
-        }
-
-        // عرض عدد الهواتف
-        const totalDevices = select.options.length - 1;
-        document.getElementById('deviceCount').textContent = "إجمالي الهواتف المتاحة: " + totalDevices;
-
-        // ============ البحث ============
-        function filterDevices() {
-            let input = document.getElementById('searchInput').value.toLowerCase();
-            let options = select.getElementsByTagName('option');
-            for (let i = 0; i < options.length; i++) {
-                let txtValue = options[i].textContent || options[i].innerText;
-                options[i].style.display = (txtValue.toLowerCase().indexOf(input) > -1) ? "" : "none";
+            if (price !== "") {
+                priceValue.innerText = price;
+                priceBox.style.display = "block";
+            } else {
+                priceBox.style.display = "none";
             }
         }
 
-        // ============ توليد الحساسية ============
-        function generateSensitivity() {
-            if (!select.value) { alert("يرجى اختيار اسم هاتفك أولاً من القائمة!"); return; }
-            document.getElementById('sensGen').innerText = Math.floor(Math.random() * 41) + 160;
-            document.getElementById('sensRed').innerText = Math.floor(Math.random() * 31) + 170;
-            document.getElementById('sens2x').innerText = Math.floor(Math.random() * 51) + 150;
-            document.getElementById('sens4x').innerText = Math.floor(Math.random() * 51) + 150;
-            document.getElementById('sensSniper').innerText = Math.floor(Math.random() * 71) + 80;
-            document.getElementById('sensFree').innerText = Math.floor(Math.random() * 101) + 100;
-            document.getElementById('sensBtn').innerText = (Math.floor(Math.random() * 16) + 40) + "%";
-            document.getElementById('sensDpi').innerText = (Math.floor(Math.random() * 401) + 500) + " DPI";
-            document.getElementById('results').style.display = "block";
-        }
+        // إرسال الفورم عبر AJAX عشان نعرض رسالة نجاح بدون إعادة تحميل الصفحة
+        const form = document.getElementById('lawForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const statusMsg = document.getElementById('statusMsg');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'جارٍ الإرسال...';
+            statusMsg.className = 'status-msg';
+            statusMsg.innerText = '';
+
+            try {
+                const formData = new FormData(form);
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                const data = await response.json();
+
+                if (response.ok && data.success) {
+                    statusMsg.className = 'status-msg success';
+                    statusMsg.innerText = '✅ تم إرسال البيانات بنجاح، سيتم التواصل معك قريباً.';
+                    form.reset();
+                    updatePrice();
+                    document.getElementById('priceBox').style.display = 'none';
+                } else {
+                    statusMsg.className = 'status-msg error';
+                    statusMsg.innerText = '❌ ' + (data.message || 'حدث خطأ أثناء الإرسال.');
+                }
+            } catch (err) {
+                statusMsg.className = 'status-msg error';
+                statusMsg.innerText = '❌ تعذر الاتصال بالسيرفر. تحقق من الإنترنت وحاول مرة أخرى.';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'إرسال البيانات';
+            }
+        });
     </script>
+
 </body>
-                                       </html>
+</html>
