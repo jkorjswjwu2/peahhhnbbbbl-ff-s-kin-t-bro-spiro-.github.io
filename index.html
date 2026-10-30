@@ -18,17 +18,17 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 15px;
         }
         .container {
             width: 100%;
-            max-width: 450px;
-            padding: 20px;
+            max-width: 500px;
         }
         .card {
             background: #0a0a0a;
             border: 2px solid #ff0000;
             border-radius: 16px;
-            padding: 30px;
+            padding: 30px 20px;
             box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
         }
         h1.title {
@@ -51,7 +51,7 @@
         }
         input {
             width: 100%;
-            padding: 12px 15px;
+            padding: 14px 18px;
             background: #121212;
             border: 1px solid #ff0000;
             color: #fff;
@@ -64,7 +64,7 @@
         }
         button.btn {
             width: 100%;
-            padding: 12px;
+            padding: 14px;
             background: #ff0000;
             color: white;
             border: none;
@@ -85,18 +85,18 @@
             margin-top: 15px;
             font-size: 14px;
         }
-        /* Dashboard Styles */
+        /* Dashboard Styles - Wide & Responsive */
         .dashboard {
             display: none;
             width: 100%;
-            max-width: 650px;
-            padding: 20px;
+            max-width: 900px;
+            padding: 10px;
         }
         .header-dash {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             border-bottom: 1px solid #ff0000;
             padding-bottom: 15px;
         }
@@ -105,35 +105,37 @@
             align-items: center;
             background: #0d0d0d;
             border: 1px solid #330000;
-            border-radius: 12px;
+            border-radius: 14px;
             padding: 15px;
             margin-bottom: 15px;
-            box-shadow: 0 0 10px rgba(255,0,0,0.1);
+            box-shadow: 0 0 12px rgba(255,0,0,0.15);
             justify-content: space-between;
+            gap: 15px;
         }
         .skin-row img {
-            width: 100px;
-            height: 100px;
+            width: 90px;
+            height: 90px;
             object-fit: cover;
-            border-radius: 8px;
+            border-radius: 10px;
             border: 1px solid #ff0000;
+            flex-shrink: 0;
         }
         .skin-details {
             flex-grow: 1;
-            padding: 0 20px;
         }
         .skin-title {
             color: #ff4d4d;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 15px;
             margin-bottom: 5px;
         }
         /* Toggle Switch */
         .switch {
             position: relative;
             display: inline-block;
-            width: 50px;
-            height: 26px;
+            width: 55px;
+            height: 28px;
+            flex-shrink: 0;
         }
         .switch input { 
             opacity: 0;
@@ -151,8 +153,8 @@
         .slider:before {
             position: absolute;
             content: "";
-            height: 18px;
-            width: 18px;
+            height: 20px;
+            width: 20px;
             left: 4px;
             bottom: 4px;
             background-color: white;
@@ -163,7 +165,7 @@
             background-color: #ff0000;
         }
         input:checked + .slider:before {
-            transform: translateX(24px);
+            transform: translateX(27px);
         }
         /* Terminal */
         .terminal {
@@ -171,10 +173,10 @@
             border: 1px solid #ff0000;
             color: #00ff00;
             padding: 15px;
-            border-radius: 8px;
+            border-radius: 10px;
             font-family: monospace;
-            font-size: 12px;
-            height: 140px;
+            font-size: 13px;
+            height: 160px;
             overflow-y: auto;
             margin-top: 20px;
             display: none;
@@ -182,8 +184,8 @@
         .admin-panel {
             background: #121212;
             border: 1px dashed #ff0000;
-            padding: 15px;
-            border-radius: 12px;
+            padding: 20px;
+            border-radius: 14px;
             margin-bottom: 20px;
             display: none;
         }
@@ -195,6 +197,7 @@
             margin-top: 10px;
             font-size: 13px;
             color: #ccc;
+            word-break: break-all;
         }
     </style>
 </head>
@@ -222,8 +225,8 @@
         <div class="header-dash">
             <h2 style="color: #ff0000; font-size: 18px;">SPIRO X CHEAT PANEL</h2>
             <div>
-                <button class="btn" style="padding: 6px 12px; font-size: 12px; width: auto;" id="adminToggleBtn" onclick="toggleAdminPanel()">Admin Panel</button>
-                <button class="btn" style="padding: 6px 12px; font-size: 12px; background: #333; width: auto; margin-left: 5px;" onclick="location.reload()">Logout</button>
+                <button class="btn" style="padding: 8px 14px; font-size: 12px; width: auto;" id="adminToggleBtn" onclick="toggleAdminPanel()">Admin Panel</button>
+                <button class="btn" style="padding: 8px 14px; font-size: 12px; background: #333; width: auto; margin-left: 5px;" onclick="location.reload()">Logout</button>
             </div>
         </div>
 
@@ -231,21 +234,21 @@
         <div class="admin-panel" id="adminPanel">
             <h3>Admin Creator Panel</h3>
             <p style="font-size: 12px; margin-bottom: 10px; color: #aaa;">Generate working VIP keys instantly for users:</p>
-            <button class="btn" style="width: auto; padding: 6px 12px; font-size: 13px;" onclick="generateKey()">Create Key</button>
+            <button class="btn" style="width: auto; padding: 8px 16px; font-size: 13px;" onclick="generateKey()">Create Key</button>
             <div class="key-list" id="keyList">Active Keys: <b>SPIRO-VIP-2026</b></div>
         </div>
 
         <h3 style="margin-bottom: 15px; color: #fff; font-size: 16px;">Skins Directory:</h3>
         
-        <!-- Skin Item -->
+        <!-- Skin Item with SPIRO X Badge -->
         <div class="skin-row">
-            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%23111'><rect width='100%' height='100%'/><text x='50%' y='50%' fill='%23ff0000' font-size='12' text-anchor='middle' dy='.3em'>HIP HOP</text></svg>" alt="HipHop Skin">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%23111'><rect width='100%' height='100%'/><circle cx='50' cy='35' r='18' fill='%23ff0000'/><rect x='25' y='60' width='50' height='25' rx='8' fill='%23ff0000'/><text x='50%' y='92%' fill='%23ff0000' font-size='12' font-weight='bold' text-anchor='middle'>SPIRO X</text></svg>" alt="SPIRO X Skin">
             <div class="skin-details">
-                <div class="skin-title">CRIME ALOK / HIP HOP SKIN</div>
-                <div style="font-size: 11px; color: #888;">Auto Inject & Extract</div>
+                <div class="skin-title">CRIME ALOK / SPIRO X SKIN</div>
+                <div style="font-size: 12px; color: #888;">Auto Inject & Extract to FreeFire</div>
             </div>
             <label class="switch">
-                <input type="checkbox" onchange="toggleInjection(this, 'hiphop.zip')">
+                <input type="checkbox" onchange="toggleInjection(this, 'spiro_x_skin.zip')">
                 <span class="slider"></span>
             </label>
         </div>
@@ -258,8 +261,12 @@
 
     <script>
         let adminPass = "admin123";
-        let customKeys = ["SPIRO-VIP-2026"];
+        let customKeys = JSON.parse(localStorage.getItem('spiro_keys')) || ["SPIRO-VIP-2026"];
         let isAdmin = false;
+
+        window.onload = function() {
+            updateKeyListDisplay();
+        };
 
         function handleLogin() {
             let pass = document.getElementById('password').value.trim();
@@ -271,7 +278,8 @@
                 return;
             }
 
-            if (customKeys.includes(pass)) {
+            let savedKeys = JSON.parse(localStorage.getItem('spiro_keys')) || customKeys;
+            if (savedKeys.includes(pass)) {
                 isAdmin = false;
                 document.getElementById('adminToggleBtn').style.display = 'none';
                 openDashboard();
@@ -293,8 +301,18 @@
         function generateKey() {
             let randomKey = "SPIRO-" + Math.random().toString(36).substring(2, 8).toUpperCase();
             customKeys.push(randomKey);
-            document.getElementById('keyList').innerHTML += `<br>• New Key: <b style="color:#00ff00;">${randomKey}</b>`;
+            localStorage.setItem('spiro_keys', JSON.stringify(customKeys));
+            updateKeyListDisplay();
             alert("Key generated successfully: " + randomKey);
+        }
+
+        function updateKeyListDisplay() {
+            let keys = JSON.parse(localStorage.getItem('spiro_keys')) || customKeys;
+            let listHTML = "Active Keys: ";
+            keys.forEach(k => {
+                listHTML += `<br>• <b style="color:#00ff00;">${k}</b>`;
+            });
+            document.getElementById('keyList').innerHTML = listHTML;
         }
 
         function toggleInjection(checkbox, zipName) {
