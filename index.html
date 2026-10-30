@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,14 +27,14 @@
         .card {
             background: #0a0a0a;
             border: 2px solid #ff0000;
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 30px;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
         }
         h1.title {
             color: #ff0000;
             text-align: center;
-            font-size: 24px;
+            font-size: 22px;
             margin-bottom: 25px;
             letter-spacing: 2px;
             text-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
@@ -47,19 +47,20 @@
             margin-bottom: 8px;
             color: #ff4d4d;
             font-weight: bold;
+            font-size: 14px;
         }
         input {
             width: 100%;
-            padding: 12px;
+            padding: 12px 15px;
             background: #121212;
             border: 1px solid #ff0000;
             color: #fff;
-            border-radius: 6px;
-            font-size: 16px;
+            border-radius: 25px;
+            font-size: 15px;
             outline: none;
         }
         input:focus {
-            box-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
         }
         button.btn {
             width: 100%;
@@ -67,7 +68,7 @@
             background: #ff0000;
             color: white;
             border: none;
-            border-radius: 6px;
+            border-radius: 25px;
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
@@ -88,7 +89,7 @@
         .dashboard {
             display: none;
             width: 100%;
-            max-width: 800px;
+            max-width: 650px;
             padding: 20px;
         }
         .header-dash {
@@ -99,32 +100,33 @@
             border-bottom: 1px solid #ff0000;
             padding-bottom: 15px;
         }
-        .skins-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .skin-card {
+        .skin-row {
+            display: flex;
+            align-items: center;
             background: #0d0d0d;
             border: 1px solid #330000;
-            border-radius: 8px;
+            border-radius: 12px;
             padding: 15px;
-            text-align: center;
+            margin-bottom: 15px;
             box-shadow: 0 0 10px rgba(255,0,0,0.1);
-        }
-        .skin-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 6px;
-            border: 1px solid #ff0000;
-            margin-bottom: 12px;
-        }
-        .skin-info {
-            display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-top: 10px;
+        }
+        .skin-row img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #ff0000;
+        }
+        .skin-details {
+            flex-grow: 1;
+            padding: 0 20px;
+        }
+        .skin-title {
+            color: #ff4d4d;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 5px;
         }
         /* Toggle Switch */
         .switch {
@@ -163,16 +165,16 @@
         input:checked + .slider:before {
             transform: translateX(24px);
         }
-        /* Terminal / Log box */
+        /* Terminal */
         .terminal {
             background: #000;
             border: 1px solid #ff0000;
             color: #00ff00;
             padding: 15px;
-            border-radius: 6px;
+            border-radius: 8px;
             font-family: monospace;
-            font-size: 13px;
-            height: 150px;
+            font-size: 12px;
+            height: 140px;
             overflow-y: auto;
             margin-top: 20px;
             display: none;
@@ -181,17 +183,17 @@
             background: #121212;
             border: 1px dashed #ff0000;
             padding: 15px;
-            border-radius: 8px;
+            border-radius: 12px;
             margin-bottom: 20px;
             display: none;
         }
         .admin-panel h3 {
             color: #ff0000;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         .key-list {
             margin-top: 10px;
-            font-size: 14px;
+            font-size: 13px;
             color: #ccc;
         }
     </style>
@@ -203,14 +205,14 @@
         <div class="card">
             <h1 class="title">WELCOME TO SPIRO X CHEAT</h1>
             <div class="form-group">
-                <label>اسم المستخدم أو المفتاح (Username / Key):</label>
-                <input type="text" id="username" placeholder="أدخل اليوزر أو المفتاح...">
+                <label>Username (Fixed):</label>
+                <input type="text" id="username" value="SPIRO" readonly style="background: #1a1a1a; color: #ff4d4d; cursor: not-allowed;">
             </div>
             <div class="form-group">
-                <label>كلمة المرور (Password):</label>
-                <input type="password" id="password" placeholder="أدخل كلمة المرور...">
+                <label>VIP Key / Password:</label>
+                <input type="password" id="password" placeholder="Enter VIP Key or Admin Password...">
             </div>
-            <button class="btn" onclick="handleLogin()">تسجيل الدخول</button>
+            <button class="btn" onclick="handleLogin()">Login</button>
             <div class="error-msg" id="errorMsg"></div>
         </div>
     </div>
@@ -218,81 +220,63 @@
     <!-- Dashboard Section -->
     <div class="dashboard" id="dashContainer">
         <div class="header-dash">
-            <h2 style="color: #ff0000;">SPIRO X CHEAT - PANEL</h2>
+            <h2 style="color: #ff0000; font-size: 18px;">SPIRO X CHEAT PANEL</h2>
             <div>
-                <button class="btn" style="padding: 6px 12px; font-size: 13px;" id="adminToggleBtn" onclick="toggleAdminPanel()">لوحة الأدمن</button>
-                <button class="btn" style="padding: 6px 12px; font-size: 13px; background: #333; margin-right: 5px;" onclick="location.reload()">خروج</button>
+                <button class="btn" style="padding: 6px 12px; font-size: 12px; width: auto;" id="adminToggleBtn" onclick="toggleAdminPanel()">Admin Panel</button>
+                <button class="btn" style="padding: 6px 12px; font-size: 12px; background: #333; width: auto; margin-left: 5px;" onclick="location.reload()">Logout</button>
             </div>
         </div>
 
-        <!-- Admin Panel (Visible for Admin) -->
+        <!-- Admin Panel -->
         <div class="admin-panel" id="adminPanel">
-            <h3>لوحة تحكم المطور (Admin Creator)</h3>
-            <p style="font-size: 13px; margin-bottom: 10px; color: #aaa;">إنشاء مفاتيح تفعيل جديدة يستقبلها النظام فوراً:</p>
-            <button class="btn" style="width: auto; padding: 8px 15px; font-size: 14px;" onclick="generateKey()">إنشاء مفتاح جديد (Create Key)</button>
-            <div class="key-list" id="keyList">المفاتيح النشطة: <b>SPIRO-ADMIN-2026</b></div>
+            <h3>Admin Creator Panel</h3>
+            <p style="font-size: 12px; margin-bottom: 10px; color: #aaa;">Generate working VIP keys instantly for users:</p>
+            <button class="btn" style="width: auto; padding: 6px 12px; font-size: 13px;" onclick="generateKey()">Create Key</button>
+            <div class="key-list" id="keyList">Active Keys: <b>SPIRO-VIP-2026</b></div>
         </div>
 
-        <h3 style="margin-bottom: 15px; color: #fff;">قائمة السكنات والأدوات:</h3>
+        <h3 style="margin-bottom: 15px; color: #fff; font-size: 16px;">Skins Directory:</h3>
         
-        <div class="skins-grid">
-            <!-- Skin 1 -->
-            <div class="skin-card">
-                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' fill='%23222'><rect width='100%' height='100%'/><text x='50%' y='50%' fill='%23ff0000' font-size='18' text-anchor='middle' dy='.3em'>CRIME ALOK SKIN</text></svg>" alt="Skin 1" id="img1">
-                <div class="skin-info">
-                    <span style="font-weight: bold; color: #ff4d4d;">سكن الهيب هوب / الجوكر</span>
-                    <label class="switch">
-                        <input type="checkbox" onchange="toggleInjection(this, 'Skin_HipHop.zip')">
-                        <span class="slider"></span>
-                    </label>
-                </div>
+        <!-- Skin Item -->
+        <div class="skin-row">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%23111'><rect width='100%' height='100%'/><text x='50%' y='50%' fill='%23ff0000' font-size='12' text-anchor='middle' dy='.3em'>HIP HOP</text></svg>" alt="HipHop Skin">
+            <div class="skin-details">
+                <div class="skin-title">CRIME ALOK / HIP HOP SKIN</div>
+                <div style="font-size: 11px; color: #888;">Auto Inject & Extract</div>
             </div>
-
-            <!-- Skin 2 -->
-            <div class="skin-card">
-                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' fill='%23222'><rect width='100%' height='100%'/><text x='50%' y='50%' fill='%23ff0000' font-size='18' text-anchor='middle' dy='.3em'>Y9 TOOL BUNDLE</text></svg>" alt="Skin 2" id="img2">
-                <div class="skin-info">
-                    <span style="font-weight: bold; color: #ff4d4d;">حزمة سكنات Y9 Tool</span>
-                    <label class="switch">
-                        <input type="checkbox" onchange="toggleInjection(this, 'Skin_Y9Bundle.zip')">
-                        <span class="slider"></span>
-                    </label>
-                </div>
-            </div>
+            <label class="switch">
+                <input type="checkbox" onchange="toggleInjection(this, 'hiphop.zip')">
+                <span class="slider"></span>
+            </label>
         </div>
 
         <!-- Terminal Log Box -->
         <div class="terminal" id="terminalBox">
-            [System]: جاري طلب صلاحيات الوصول للملفات...<br>
+            [System]: Ready for injection...<br>
         </div>
     </div>
 
     <script>
-        // الأكواد الافتتاحية لبيانات الدخول
-        let validUsers = {
-            "admin": "admin123",
-            "spiro": "1999"
-        };
+        let adminPass = "admin123";
         let customKeys = ["SPIRO-VIP-2026"];
         let isAdmin = false;
 
         function handleLogin() {
-            let user = document.getElementById('username').value.trim();
             let pass = document.getElementById('password').value.trim();
             let err = document.getElementById('errorMsg');
 
-            if (user === "admin" && pass === "admin123") {
+            if (pass === adminPass) {
                 isAdmin = true;
                 openDashboard();
                 return;
             }
 
-            if ((validUsers[user] && validUsers[user] === pass) || customKeys.includes(user)) {
+            if (customKeys.includes(pass)) {
                 isAdmin = false;
                 document.getElementById('adminToggleBtn').style.display = 'none';
                 openDashboard();
             } else {
-                err.innerText = "خطأ: اسم المستخدم أو كلمة المرور أو المفتاح غير صحيح!";
+                err.innerText = "Error: Invalid VIP Key or Admin Password!";
             }
         }
 
@@ -309,8 +293,8 @@
         function generateKey() {
             let randomKey = "SPIRO-" + Math.random().toString(36).substring(2, 8).toUpperCase();
             customKeys.push(randomKey);
-            document.getElementById('keyList').innerHTML += `<br>• مفتاح جديد نشط: <b style="color:#00ff00;">${randomKey}</b>`;
-            alert("تم إنشاء المفتاح بنجاح: " + randomKey);
+            document.getElementById('keyList').innerHTML += `<br>• New Key: <b style="color:#00ff00;">${randomKey}</b>`;
+            alert("Key generated successfully: " + randomKey);
         }
 
         function toggleInjection(checkbox, zipName) {
@@ -318,23 +302,23 @@
             
             if (checkbox.checked) {
                 terminal.style.display = 'block';
-                terminal.innerHTML += `[+] طلب إذن الوصول لمجلدات اللعبة...<br>`;
+                terminal.innerHTML += `[+] Requesting storage permissions...<br>`;
                 
                 setTimeout(() => {
-                    terminal.innerHTML += `[+] جارٍ ضغط ونقل الملف: ${zipName}<br>`;
+                    terminal.innerHTML += `[+] Injecting and transferring archive: ${zipName}<br>`;
                 }, 600);
 
                 setTimeout(() => {
                     let targetPath = "android/data/com.dts.freefireth/files/contentcache/Optional/android/optionalavatarres/gameassetbundles/";
-                    terminal.innerHTML += `[+] مسار الاستهداف: ${targetPath}<br>`;
+                    terminal.innerHTML += `[+] Target Path: ${targetPath}<br>`;
                 }, 1200);
 
                 setTimeout(() => {
-                    terminal.innerHTML += `[SUCCESS] تم فك ضغط وحقن الملف بنجاح في اللعبة! 🚀<br>`;
+                    terminal.innerHTML += `[SUCCESS] Extracted and injected successfully into FreeFire path! 🚀<br>`;
                     terminal.scrollTop = terminal.scrollHeight;
                 }, 1800);
             } else {
-                terminal.innerHTML += `[-] تم إيقاف التفعيل وإزالة السكن.<br>`;
+                terminal.innerHTML += `[-] Injection disabled and skin removed.<br>`;
                 terminal.scrollTop = terminal.scrollHeight;
             }
         }
