@@ -1,349 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPIRO X CHEAT</title>
+    <title>WELLCOM TO SPIRO X</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Tajawal', sans-serif; }
         body {
-            background-color: #000000;
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 15px;
+            background-color: #050508; color: #fff; min-height: 100vh;
+            display: flex; flex-direction: column; align-items: center;
+            padding: 20px 10px; overflow-x: hidden;
         }
-        .container {
-            width: 100%;
-            max-width: 500px;
+        .admin-badge {
+            background: rgba(0,210,255,0.1); border: 1px solid #00d2ff; color: #00d2ff;
+            padding: 6px 16px; border-radius: 20px; font-size: .85rem; margin-bottom: 25px;
+            box-shadow: 0 0 10px rgba(0,210,255,.2);
         }
-        .card {
-            background: #0a0a0a;
-            border: 2px solid #ff0000;
-            border-radius: 16px;
-            padding: 30px 20px;
-            box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
-        }
-        h1.title {
-            color: #ff0000;
-            text-align: center;
-            font-size: 22px;
-            margin-bottom: 25px;
+        .title-container { text-align: center; margin-bottom: 15px; }
+
+        /* تأثير ألوان RGB متغيرة مثل الكيبورد */
+        .main-title {
+            font-family: 'Orbitron', sans-serif; font-size: 2.2rem; font-weight: 900;
+            background: linear-gradient(90deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bf5, #7a00ff, #ff00c8, #ff0000);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rgbAnimation 6s linear infinite;
             letter-spacing: 2px;
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
         }
-        .form-group {
-            margin-bottom: 20px;
+        
+        @keyframes rgbAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: #ff4d4d;
-            font-weight: bold;
-            font-size: 14px;
+
+        .pill-card {
+            background: rgba(10, 20, 35, 0.85); border: 2px solid rgba(0, 210, 255, 0.5);
+            border-radius: 40px; width: 100%; max-width: 480px;
+            padding: 30px 20px; box-shadow: 0 10px 30px rgba(0,0,0,.9), 0 0 25px rgba(0, 210, 255, 0.3);
+            backdrop-filter: blur(10px); margin-top: 20px;
         }
-        input {
-            width: 100%;
-            padding: 14px 18px;
-            background: #121212;
-            border: 1px solid #ff0000;
-            color: #fff;
-            border-radius: 25px;
-            font-size: 15px;
-            outline: none;
+        .section-label { font-size: 1.1rem; color: #00d2ff; margin-bottom: 12px; display: block; font-weight: bold; }
+        .search-box { position: relative; margin-bottom: 15px; }
+        .search-box input {
+            width: 100%; padding: 12px 15px; background: #080d1a;
+            border: 1px solid #00d2ff; border-radius: 15px; color: #fff;
+            font-size: .95rem; outline: none; transition: .3s;
         }
-        input:focus {
-            box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+        .search-box input:focus { border-color: #00d2ff; box-shadow: 0 0 12px rgba(0,210,255,.5); }
+        .device-select {
+            width: 100%; padding: 12px 15px; background: #080d1a;
+            border: 1px solid #00d2ff; border-radius: 15px; color: #fff;
+            font-size: .95rem; outline: none; cursor: pointer;
         }
-        button.btn {
-            width: 100%;
-            padding: 14px;
-            background: #ff0000;
-            color: white;
-            border: none;
-            border-radius: 25px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-            text-transform: uppercase;
+        .device-select option { background: #080d1a; color: #fff; padding: 8px; }
+        .device-count { font-size: .8rem; color: #00d2ff; margin-top: 6px; text-align: center; }
+        .btn-enter {
+            width: 100%; padding: 14px; background: linear-gradient(90deg, #0055ff, #00d2ff);
+            border: none; border-radius: 25px; color: #fff; font-weight: bold;
+            font-size: 1.1rem; cursor: pointer; margin-top: 20px;
+            box-shadow: 0 0 18px rgba(0,210,255,.5); transition: .3s transform;
         }
-        button.btn:hover {
-            background: #cc0000;
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+        .btn-enter:active { transform: scale(.98); }
+        .results-box {
+            display: none; margin-top: 25px; background: rgba(5, 12, 25, 0.95);
+            border-radius: 25px; padding: 20px; border: 1.5px solid #00d2ff;
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
         }
-        .error-msg {
-            color: #ff3333;
-            text-align: center;
-            margin-top: 15px;
-            font-size: 14px;
+        .sens-item {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 10px 0; border-bottom: 1px solid rgba(0, 210, 255, 0.15);
         }
-        /* Dashboard Styles - Wide & Responsive */
-        .dashboard {
-            display: none;
-            width: 100%;
-            max-width: 900px;
-            padding: 10px;
-        }
-        .header-dash {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #ff0000;
-            padding-bottom: 15px;
-        }
-        .skin-row {
-            display: flex;
-            align-items: center;
-            background: #0d0d0d;
-            border: 1px solid #330000;
-            border-radius: 14px;
-            padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 0 12px rgba(255,0,0,0.15);
-            justify-content: space-between;
-            gap: 15px;
-        }
-        .skin-row img {
-            width: 95px;
-            height: 95px;
-            object-fit: cover;
-            border-radius: 10px;
-            border: 1px solid #ff0000;
-            flex-shrink: 0;
-            background: #1a1a1a;
-        }
-        .skin-details {
-            flex-grow: 1;
-        }
-        .skin-title {
-            color: #ff4d4d;
-            font-weight: bold;
-            font-size: 15px;
-            margin-bottom: 5px;
-        }
-        /* Toggle Switch */
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 55px;
-            height: 28px;
-            flex-shrink: 0;
-        }
-        .switch input { 
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-color: #333;
-            transition: .4s;
-            border-radius: 34px;
-        }
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 20px;
-            width: 20px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
-        input:checked + .slider {
-            background-color: #ff0000;
-        }
-        input:checked + .slider:before {
-            transform: translateX(27px);
-        }
-        /* Terminal */
-        .terminal {
-            background: #000;
-            border: 1px solid #ff0000;
-            color: #00ff00;
-            padding: 15px;
-            border-radius: 10px;
-            font-family: monospace;
-            font-size: 13px;
-            height: 180px;
-            overflow-y: auto;
-            margin-top: 20px;
-            display: none;
-        }
-        .admin-panel {
-            background: #121212;
-            border: 1px dashed #ff0000;
-            padding: 20px;
-            border-radius: 14px;
-            margin-bottom: 20px;
-            display: none;
-        }
-        .admin-panel h3 {
-            color: #ff0000;
-            margin-bottom: 8px;
-        }
-        .key-list {
-            margin-top: 10px;
-            font-size: 13px;
-            color: #ccc;
-            word-break: break-all;
-        }
+        .sens-item:last-child { border-bottom: none; }
+        .sens-name { color: #b0c4de; font-size: .95rem; }
+        .sens-value { color: #00d2ff; font-weight: bold; font-family: 'Orbitron', sans-serif; font-size: 1.1rem; }
+        .dpi-value { color: #00ffff; font-weight: bold; font-family: 'Orbitron', sans-serif; }
     </style>
 </head>
 <body>
 
-    <!-- Login Section -->
-    <div class="container" id="loginContainer">
-        <div class="card">
-            <h1 class="title">WELCOME TO SPIRO X CHEAT</h1>
-            <div class="form-group">
-                <label>Username (Fixed):</label>
-                <input type="text" id="username" value="SPIRO" readonly style="background: #1a1a1a; color: #ff4d4d; cursor: not-allowed;">
-            </div>
-            <div class="form-group">
-                <label>VIP Key / Password:</label>
-                <input type="password" id="password" placeholder="Enter VIP Key or Admin Password...">
-            </div>
-            <button class="btn" onclick="handleLogin()">Login</button>
-            <div class="error-msg" id="errorMsg"></div>
-        </div>
+    <div class="admin-badge">ADMIN: cj.1wq21wq2@gmail.com</div>
+
+    <div class="title-container">
+        <h1 class="main-title">WELLCOM TO SPIRO X</h1>
     </div>
 
-    <!-- Dashboard Section -->
-    <div class="dashboard" id="dashContainer">
-        <div class="header-dash">
-            <h2 style="color: #ff0000; font-size: 18px;">SPIRO X CHEAT PANEL</h2>
-            <div>
-                <button class="btn" style="padding: 8px 14px; font-size: 12px; width: auto;" id="adminToggleBtn" onclick="toggleAdminPanel()">Admin Panel</button>
-                <button class="btn" style="padding: 8px 14px; font-size: 12px; background: #333; width: auto; margin-left: 5px;" onclick="location.reload()">Logout</button>
-            </div>
+    <div class="pill-card">
+        <label class="section-label">ابحث عن هاتفك:</label>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" onkeyup="filterDevices()" placeholder="اكتب اسم هاتفك هنا...">
         </div>
 
-        <!-- Admin Panel -->
-        <div class="admin-panel" id="adminPanel">
-            <h3>Admin Creator Panel</h3>
-            <p style="font-size: 12px; margin-bottom: 10px; color: #aaa;">Generate working VIP keys instantly for users:</p>
-            <button class="btn" style="width: auto; padding: 8px 16px; font-size: 13px;" onclick="generateKey()">Create Key</button>
-            <div class="key-list" id="keyList">Active Keys: <b>SPIRO-VIP-2026</b></div>
-        </div>
+        <select id="deviceSelect" class="device-select">
+            <option value="">-- اختر هاتفك --</option>
+        </select>
+        <p class="device-count" id="deviceCount"></p>
 
-        <h3 style="margin-bottom: 15px; color: #fff; font-size: 16px;">Skins Directory:</h3>
-        
-        <!-- Skin Item with Shizuku Injection Simulation -->
-        <div class="skin-row">
-            <img src="skin.jpg" alt="SPIRO X Skin" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' fill=\'%23110000\'><rect width=\'100%\' height=\'100%\' stroke=\'%23ff0000\' stroke-width=\'2\'/><text x=\'50%\' y=\'45%\' fill=\'%23ff0000\' font-size=\'14\' font-weight=\'bold\' text-anchor=\'middle\'>SPIRO X</text><text x=\'50%\' y=\'65%\' fill=\'white\' font-size=\'10\' text-anchor=\'middle\'>PREMIUM SKIN</text></svg>';">
-            <div class="skin-details">
-                <div class="skin-title">CRIME ALOK / SPIRO X SKIN</div>
-                <div style="font-size: 12px; color: #888;">Shizuku Auto Inject & Extract</div>
-            </div>
-            <label class="switch">
-                <input type="checkbox" onchange="toggleShizukuInjection(this, 'spiro_x_skin.zip')">
-                <span class="slider"></span>
-            </label>
-        </div>
+        <button class="btn-enter" onclick="generateSensitivity()">ENTER / استخراج الحساسية</button>
 
-        <!-- Terminal Log Box -->
-        <div class="terminal" id="terminalBox">
-            [System]: Ready for Shizuku binding...<br>
+        <div id="results" class="results-box">
+            <div class="sens-item"><span class="sens-name">عام (General):</span><span class="sens-value" id="sensGen">188</span></div>
+            <div class="sens-item"><span class="sens-name">نقطة حمراء (Red Dot):</span><span class="sens-value" id="sensRed">195</span></div>
+            <div class="sens-item"><span class="sens-name">عدسة 2X:</span><span class="sens-value" id="sens2x">175</span></div>
+            <div class="sens-item"><span class="sens-name">عدسة 4X:</span><span class="sens-value" id="sens4x">182</span></div>
+            <div class="sens-item"><span class="sens-name">عدسة القناصة (Sniper):</span><span class="sens-value" id="sensSniper">120</span></div>
+            <div class="sens-item"><span class="sens-name">نظرة حرة (Free Look):</span><span class="sens-value" id="sensFree">150</span></div>
+            <div class="sens-item"><span class="sens-name">زر الضرب (Fire Button):</span><span class="sens-value" id="sensBtn">48%</span></div>
+            <div class="sens-item"><span class="sens-name">معدل الـ DPI المقترح:</span><span class="dpi-value" id="sensDpi">600 DPI</span></div>
         </div>
     </div>
 
     <script>
-        let adminPass = "admin123";
-        let customKeys = JSON.parse(localStorage.getItem('spiro_keys')) || ["SPIRO-VIP-2026"];
-        let isAdmin = false;
-
-        window.onload = function() {
-            updateKeyListDisplay();
+        // ============ قاعدة بيانات الهواتف الشاملة ============
+        const catalog = {
+            "Samsung Galaxy A": ["A01","A02","A02s","A03","A03s","A04","A04s","A05","A05s","A06","A10","A10s","A11","A12","A13","A14","A15","A16","A20","A20s","A21","A21s","A22","A23","A24","A25","A30","A30s","A31","A32","A33","A34","A35","A50","A50s","A51","A52","A52s","A53","A54","A55","A70","A71","A72","A73"],
+            "Samsung Galaxy S": ["S8","S9","S10","S10e","S10+","S20","S20 FE","S20+","S20 Ultra","S21","S21 FE","S21+","S21 Ultra","S22","S22+","S22 Ultra","S23","S23 FE","S23+","S23 Ultra","S24","S24 FE","S24+","S24 Ultra"],
+            "Samsung Galaxy Z": ["Z Flip3","Z Flip4","Z Flip5","Z Flip6","Z Fold3","Z Fold4","Z Fold5","Z Fold6"],
+            "Samsung Galaxy M": ["M11","M12","M13","M14","M15","M21","M22","M23","M31","M32","M33","M34","M35","M51","M52","M53","M54","M55"],
+            "iPhone": ["6s","7","8","8 Plus","X","XR","XS","XS Max","11","11 Pro","11 Pro Max","12","12 mini","12 Pro","12 Pro Max","13","13 mini","13 Pro","13 Pro Max","14","14 Plus","14 Pro","14 Pro Max","15","15 Plus","15 Pro","15 Pro Max","16","16 Plus","16 Pro","16 Pro Max","SE 2","SE 3"],
+            "Redmi Note": ["8","8 Pro","9","9 Pro","10","10 Pro","11","11 Pro","11S","12","12 Pro","12 Pro+","12S","13","13 Pro","13 Pro+"],
+            "Redmi": ["8","9","9A","9C","10","10A","10C","12","12C","13","13C","14C","A1","A2","A3","Turbo 3"],
+            "Poco": ["C40","C55","C65","M3","M4 Pro","M5","M6 Pro","X3 NFC","X3 Pro","X4 Pro","X5 Pro","X6","X6 Pro","F3","F4","F4 GT","F5","F5 Pro","F6","F6 Pro"],
+            "Xiaomi": ["Mi 9T","Mi 10T","Mi 11 Lite","11T","11T Pro","12","12 Pro","12T","12T Pro","13","13T","13T Pro","14","14 Ultra"],
+            "Infinix": ["Smart 6","Smart 7","Smart 8","Hot 9","Hot 10","Hot 10s","Hot 11s","Hot 12","Hot 20","Hot 30","Hot 40 Pro","Hot 50 Pro","Note 10 Pro","Note 11 Pro","Note 12","Note 30","Note 40 Pro","GT 10 Pro","GT 20 Pro","Zero 8","Zero 30","Zero 40"],
+            "Tecno": ["Spark 7","Spark 8","Spark 9","Spark 10 Pro","Spark 20","Spark 20 Pro+","Pova 2","Pova 3","Pova 4","Pova 5 Pro","Pova 6 Pro","Camon 18","Camon 19","Camon 20 Pro","Camon 30 Pro"],
+            "Realme": ["C11","C21","C25","C33","C35","C53","C55","C67","8 Pro","9 Pro+","10","11 Pro+","12 Pro+","GT Master Edition","GT Neo 2","GT Neo 3","GT Neo 5","GT 5"],
+            "Vivo": ["Y12","Y20","Y21","Y33s","Y36","V20","V21","V23","V25","V27","V29","V30"],
+            "OPPO": ["A15","A16","A17","A53","A54","A57","A58","A78","Reno 4","Reno 5","Reno 6","Reno 7","Reno 8T","Reno 10","Reno 11"],
+            "Honor": ["X7a","X8a","X9a","X9b","90","90 Lite","200","200 Pro","Magic 5 Lite","Magic 6 Pro"],
+            "Google Pixel": ["4a","5","6","6a","6 Pro","7","7a","7 Pro","8","8a","8 Pro","9","9 Pro"],
+            "Huawei": ["Y9a","Nova 7i","Nova 9","Nova 10","Nova 11i","P30 Pro","P40 Pro","P50 Pro","Mate 40 Pro"]
         };
 
-        function handleLogin() {
-            let pass = document.getElementById('password').value.trim();
-            let err = document.getElementById('errorMsg');
+        const select = document.getElementById('deviceSelect');
 
-            if (pass === adminPass) {
-                isAdmin = true;
-                openDashboard();
-                return;
-            }
-
-            let savedKeys = JSON.parse(localStorage.getItem('spiro_keys')) || customKeys;
-            if (savedKeys.includes(pass)) {
-                isAdmin = false;
-                document.getElementById('adminToggleBtn').style.display = 'none';
-                openDashboard();
-            } else {
-                err.innerText = "Error: Invalid VIP Key or Admin Password!";
-            }
-        }
-
-        function openDashboard() {
-            document.getElementById('loginContainer').style.display = 'none';
-            document.getElementById('dashContainer').style.display = 'block';
-        }
-
-        function toggleAdminPanel() {
-            let panel = document.getElementById('adminPanel');
-            panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
-        }
-
-        function generateKey() {
-            let randomKey = "SPIRO-" + Math.random().toString(36).substring(2, 8).toUpperCase();
-            customKeys.push(randomKey);
-            localStorage.setItem('spiro_keys', JSON.stringify(customKeys));
-            updateKeyListDisplay();
-            alert("Key generated successfully: " + randomKey);
-        }
-
-        function updateKeyListDisplay() {
-            let keys = JSON.parse(localStorage.getItem('spiro_keys')) || customKeys;
-            let listHTML = "Active Keys: ";
-            keys.forEach(k => {
-                listHTML += `<br>• <b style="color:#00ff00;">${k}</b>`;
+        // توليد الخيارات
+        for (const [series, models] of Object.entries(catalog)) {
+            models.forEach(m => {
+                const opt = document.createElement('option');
+                opt.value = (series + " " + m).toLowerCase().replace(/\s+/g, "_").replace(/[()]/g, "");
+                opt.textContent = series + " " + m;
+                select.appendChild(opt);
             });
-            document.getElementById('keyList').innerHTML = listHTML;
         }
 
-        function toggleShizukuInjection(checkbox, zipName) {
-            let terminal = document.getElementById('terminalBox');
-            
-            if (checkbox.checked) {
-                terminal.style.display = 'block';
-                terminal.innerHTML += `[+] Checking Shizuku service status...<br>`;
-                
-                setTimeout(() => {
-                    terminal.innerHTML += `[+] Shizuku permission granted! Binder active.<br>`;
-                }, 500);
+        // عرض عدد الهواتف
+        const totalDevices = select.options.length - 1;
+        document.getElementById('deviceCount').textContent = "إجمالي الهواتف المتاحة: " + totalDevices;
 
-                setTimeout(() => {
-                    terminal.innerHTML += `[+] Transferring and extracting archive: ${zipName}<br>`;
-                }, 1000);
-
-                setTimeout(() => {
-                    let targetPath = "android/data/com.dts.freefireth/files/contentcache/Optional/android/optionalavatarres/gameassetbundles/";
-                    terminal.innerHTML += `[+] Target Path: ${targetPath}<br>`;
-                }, 1600);
-
-                setTimeout(() => {
-                    terminal.innerHTML += `[SUCCESS] Shizuku successfully injected and extracted files into FreeFire! 🚀<br>`;
-                    terminal.scrollTop = terminal.scrollHeight;
-                }, 2200);
-            } else {
-                terminal.innerHTML += `[-] Shizuku unmounted and skin removed.<br>`;
-                terminal.scrollTop = terminal.scrollHeight;
+        // ============ البحث ============
+        function filterDevices() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let options = select.getElementsByTagName('option');
+            for (let i = 0; i < options.length; i++) {
+                let txtValue = options[i].textContent || options[i].innerText;
+                options[i].style.display = (txtValue.toLowerCase().indexOf(input) > -1) ? "" : "none";
             }
+        }
+
+        // ============ توليد الحساسية (حتى 200) ============
+        function generateSensitivity() {
+            if (!select.value) { alert("يرجى اختيار اسم هاتفك أولاً من القائمة!"); return; }
+            
+            document.getElementById('sensGen').innerText = Math.floor(Math.random() * 21) + 180;   // 180 - 200
+            document.getElementById('sensRed').innerText = Math.floor(Math.random() * 21) + 180;   // 180 - 200
+            document.getElementById('sens2x').innerText = Math.floor(Math.random() * 31) + 165;    // 165 - 195
+            document.getElementById('sens4x').innerText = Math.floor(Math.random() * 31) + 165;    // 165 - 195
+            document.getElementById('sensSniper').innerText = Math.floor(Math.random() * 51) + 100; // 100 - 150
+            document.getElementById('sensFree').innerText = Math.floor(Math.random() * 51) + 130;  // 130 - 180
+            document.getElementById('sensBtn').innerText = (Math.floor(Math.random() * 16) + 40) + "%"; // 40% - 55%
+            
+            const dpiList = [500, 560, 600, 650, 720, 800];
+            const randomDpi = dpiList[Math.floor(Math.random() * dpiList.length)];
+            document.getElementById('sensDpi').innerText = randomDpi + " DPI";
+            
+            document.getElementById('results').style.display = "block";
         }
     </script>
 </body>
